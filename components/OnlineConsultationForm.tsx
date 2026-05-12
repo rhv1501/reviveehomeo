@@ -87,27 +87,19 @@ const OnlineConsultationForm: React.FC = () => {
   };
 
   return (
-    <div className="relative group">
-      {/* Decorative patterns - hidden on ultra small screens for clarity */}
-      <div className="hidden sm:block absolute -top-6 -right-6 h-24 w-24 rounded-full bg-terracotta-100/40 blur-2xl group-hover:bg-terracotta-200/50 transition-colors duration-500" />
-      <div className="hidden sm:block absolute -bottom-10 -left-10 h-32 w-32 rounded-full bg-sage-100/40 blur-3xl group-hover:bg-sage-200/50 transition-colors duration-500" />
-
+    <div className="relative">
       <form
         onSubmit={handleSubmit}
-        className="relative z-10 glass-card space-y-6 sm:space-y-7 p-5 sm:p-8 md:space-y-8 md:p-10 lg:p-12 overflow-hidden"
+        className="bg-white rounded-xl shadow-lg border border-slate-200 p-6 sm:p-8 md:p-10 lg:p-12 space-y-8"
       >
-        <div className="relative space-y-3">
-          <div className="flex items-center gap-3">
-            <span className="h-px w-8 bg-terracotta-400" />
-            <h3 className="section-kicker text-terracotta-600!">
-              Digital Concierge
-            </h3>
-          </div>
-          <h2 className="text-[2rem] sm:text-4xl font-playfair font-bold text-sage-900 leading-tight">
-            Reserve your{" "}
-            <span className="italic text-terracotta-600">exclusive</span> slot
+        <div className="space-y-3">
+          <h3 className="text-xs font-bold uppercase tracking-widest text-sage-700">
+            Digital Concierge
+          </h3>
+          <h2 className="text-3xl sm:text-4xl font-bold text-sage-900 leading-tight">
+            Reserve your slot
           </h2>
-          <p className="max-w-2xl text-base sm:text-base leading-relaxed text-sage-600 font-medium">
+          <p className="max-w-2xl text-base text-slate-600">
             Take the first step towards healing. Provide a few details, and our
             team will coordinate a personalized consultation session for you.
           </p>
@@ -115,22 +107,20 @@ const OnlineConsultationForm: React.FC = () => {
 
         <div className="grid gap-6 md:grid-cols-2">
           <div className="space-y-2">
-            <label className="ml-1 text-xs sm:text-[10px] font-bold uppercase tracking-[0.24em] text-sage-800">
+            <label className="ml-1 text-xs font-bold uppercase tracking-widest text-slate-700">
               Full Name *
             </label>
-            <div className="relative">
-              <input
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                placeholder="How shall we address you?"
-                className="w-full rounded-2xl border border-sage-200/60 bg-white/50 px-5 sm:px-6 py-3.5 sm:py-4 text-sage-900 outline-none transition-all duration-300 focus:border-terracotta-400 focus:bg-white focus:ring-4 focus:ring-terracotta-400/5 placeholder:text-sage-600"
-              />
-            </div>
+            <input
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              placeholder="How shall we address you?"
+              className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sage-900 outline-none transition-all duration-300 focus:border-sage-500 focus:bg-white focus:ring-2 focus:ring-sage-500/20"
+            />
           </div>
           <div className="space-y-2">
-            <label className="ml-1 text-xs sm:text-[10px] font-bold uppercase tracking-[0.24em] text-sage-800">
+            <label className="ml-1 text-xs font-bold uppercase tracking-widest text-slate-700">
               Phone Number *
             </label>
             <input
@@ -139,14 +129,14 @@ const OnlineConsultationForm: React.FC = () => {
               onChange={handleChange}
               required
               placeholder="+91 Your mobile number"
-              className="w-full rounded-2xl border border-sage-200/60 bg-white/50 px-6 py-4 text-sage-900 outline-none transition-all duration-300 focus:border-terracotta-400 focus:bg-white focus:ring-4 focus:ring-terracotta-400/5 placeholder:text-sage-600"
+              className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sage-900 outline-none transition-all duration-300 focus:border-sage-500 focus:bg-white focus:ring-2 focus:ring-sage-500/20"
             />
           </div>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">
           <div className="space-y-2">
-            <label className="ml-1 text-xs sm:text-[10px] font-bold uppercase tracking-[0.24em] text-sage-800">
+            <label className="ml-1 text-xs font-bold uppercase tracking-widest text-slate-700">
               Email Address *
             </label>
             <input
@@ -156,11 +146,11 @@ const OnlineConsultationForm: React.FC = () => {
               onChange={handleChange}
               required
               placeholder="For appointment details"
-              className="w-full rounded-2xl border border-sage-200/60 bg-white/50 px-6 py-4 text-sage-900 outline-none transition-all duration-300 focus:border-terracotta-400 focus:bg-white focus:ring-4 focus:ring-terracotta-400/5 placeholder:text-sage-600"
+              className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sage-900 outline-none transition-all duration-300 focus:border-sage-500 focus:bg-white focus:ring-2 focus:ring-sage-500/20"
             />
           </div>
           <div className="space-y-2">
-            <label className="ml-1 text-xs sm:text-[10px] font-bold uppercase tracking-[0.24em] text-sage-800">
+            <label className="ml-1 text-xs font-bold uppercase tracking-widest text-slate-700">
               Age
             </label>
             <input
@@ -169,14 +159,14 @@ const OnlineConsultationForm: React.FC = () => {
               value={formData.age}
               onChange={handleChange}
               placeholder="Patient's age"
-              className="w-full rounded-2xl border border-sage-200/60 bg-white/50 px-6 py-4 text-sage-900 outline-none transition-all duration-300 focus:border-terracotta-400 focus:bg-white focus:ring-4 focus:ring-terracotta-400/5 placeholder:text-sage-600"
+              className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sage-900 outline-none transition-all duration-300 focus:border-sage-500 focus:bg-white focus:ring-2 focus:ring-sage-500/20"
             />
           </div>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 border-t border-sage-100 pt-6">
+        <div className="grid gap-6 md:grid-cols-2 border-t border-slate-100 pt-6">
           <div className="space-y-2">
-            <label className="ml-1 text-xs sm:text-[10px] font-bold uppercase tracking-[0.24em] text-sage-800">
+            <label className="ml-1 text-xs font-bold uppercase tracking-widest text-slate-700">
               Consultation Type *
             </label>
             <select
@@ -184,7 +174,7 @@ const OnlineConsultationForm: React.FC = () => {
               value={formData.consultationType}
               onChange={handleChange}
               required
-              className="w-full rounded-2xl border border-sage-200/60 bg-white/50 px-6 py-4 text-sage-900 outline-none transition-all duration-300 focus:border-terracotta-400 focus:bg-white focus:ring-4 focus:ring-terracotta-400/5 appearance-none cursor-pointer"
+              className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sage-900 outline-none transition-all duration-300 focus:border-sage-500 focus:bg-white focus:ring-2 focus:ring-sage-500/20 appearance-none cursor-pointer"
             >
               <option value="">Select consultation type</option>
               {consultationOptions.map((option) => (
@@ -195,14 +185,14 @@ const OnlineConsultationForm: React.FC = () => {
             </select>
           </div>
           <div className="space-y-2">
-            <label className="ml-1 text-xs sm:text-[10px] font-bold uppercase tracking-[0.24em] text-sage-800">
+            <label className="ml-1 text-xs font-bold uppercase tracking-widest text-slate-700">
               Preferred Time
             </label>
             <select
               name="preferredTime"
               value={formData.preferredTime}
               onChange={handleChange}
-              className="w-full rounded-2xl border border-sage-200/60 bg-white/50 px-6 py-4 text-sage-900 outline-none transition-all duration-300 focus:border-terracotta-400 focus:bg-white focus:ring-4 focus:ring-terracotta-400/5 appearance-none cursor-pointer"
+              className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sage-900 outline-none transition-all duration-300 focus:border-sage-500 focus:bg-white focus:ring-2 focus:ring-sage-500/20 appearance-none cursor-pointer"
             >
               <option value="">Select a preferred time</option>
               {preferredTimeOptions.map((option) => (
@@ -216,7 +206,7 @@ const OnlineConsultationForm: React.FC = () => {
 
         <div className="grid gap-6 md:grid-cols-2">
           <div className="space-y-2">
-            <label className="ml-1 text-xs sm:text-[10px] font-bold uppercase tracking-[0.24em] text-sage-800">
+            <label className="ml-1 text-xs font-bold uppercase tracking-widest text-slate-700">
               Preferred Date
             </label>
             <input
@@ -224,11 +214,11 @@ const OnlineConsultationForm: React.FC = () => {
               name="preferredDate"
               value={formData.preferredDate}
               onChange={handleChange}
-              className="w-full rounded-2xl border border-sage-200/60 bg-white/50 px-6 py-4 text-sage-900 outline-none transition-all duration-300 focus:border-terracotta-400 focus:bg-white focus:ring-4 focus:ring-terracotta-400/5 cursor-pointer"
+              className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sage-900 outline-none transition-all duration-300 focus:border-sage-500 focus:bg-white focus:ring-2 focus:ring-sage-500/20 cursor-pointer"
             />
           </div>
           <div className="space-y-2">
-            <label className="ml-1 text-xs sm:text-[10px] font-bold uppercase tracking-[0.24em] text-sage-800">
+            <label className="ml-1 text-xs font-bold uppercase tracking-widest text-slate-700">
               Mode of Visit
             </label>
             <input
@@ -236,13 +226,13 @@ const OnlineConsultationForm: React.FC = () => {
               value={formData.mode}
               onChange={handleChange}
               placeholder="e.g., Video, Phone, WhatsApp"
-              className="w-full rounded-2xl border border-sage-200/60 bg-white/50 px-6 py-4 text-sage-900 outline-none transition-all duration-300 focus:border-terracotta-400 focus:bg-white focus:ring-4 focus:ring-terracotta-400/5 placeholder:text-sage-600"
+              className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sage-900 outline-none transition-all duration-300 focus:border-sage-500 focus:bg-white focus:ring-2 focus:ring-sage-500/20"
             />
           </div>
         </div>
 
         <div className="space-y-2">
-          <label className="ml-1 text-xs sm:text-[10px] font-bold uppercase tracking-[0.24em] text-sage-800">
+          <label className="ml-1 text-xs font-bold uppercase tracking-widest text-slate-700">
             Brief History & Concerns *
           </label>
           <textarea
@@ -252,20 +242,20 @@ const OnlineConsultationForm: React.FC = () => {
             required
             rows={5}
             placeholder="Help us understand your health journey better..."
-            className="w-full resize-none rounded-3xl border border-sage-200/60 bg-white/50 px-6 py-4 text-sage-900 outline-none transition-all duration-300 focus:border-terracotta-400 focus:bg-white focus:ring-4 focus:ring-terracotta-400/5 placeholder:text-sage-600"
+            className="w-full resize-none rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sage-900 outline-none transition-all duration-300 focus:border-sage-500 focus:bg-white focus:ring-2 focus:ring-sage-500/20"
           />
         </div>
 
         {submitStatus.type && (
           <div
-            className={`animate-fade-in rounded-2xl p-6 flex items-center gap-4 ${submitStatus.type === "success" ? "bg-sage-50 border border-sage-200 text-sage-800" : "bg-terracotta-50 border border-terracotta-100 text-terracotta-800"}`}
+            className={`rounded-lg p-4 flex items-center gap-3 ${submitStatus.type === "success" ? "bg-sage-50 border border-sage-200 text-sage-800" : "bg-red-50 border border-red-200 text-red-800"}`}
           >
             <span
-              className={`h-8 w-8 shrink-0 rounded-full flex items-center justify-center text-white font-bold ${submitStatus.type === "success" ? "bg-sage-500" : "bg-terracotta-500"}`}
+              className={`h-6 w-6 shrink-0 rounded-full flex items-center justify-center text-white text-xs font-bold ${submitStatus.type === "success" ? "bg-sage-500" : "bg-red-500"}`}
             >
               {submitStatus.type === "success" ? "✓" : "!"}
             </span>
-            <p className="text-sm font-semibold leading-relaxed">
+            <p className="text-sm font-semibold">
               {submitStatus.message}
             </p>
           </div>
@@ -274,17 +264,14 @@ const OnlineConsultationForm: React.FC = () => {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="btn-premium w-full py-5 text-sm max-sm:text-base font-bold uppercase tracking-[0.2em] disabled:opacity-60 group relative overflow-hidden"
+          className="btn-premium w-full py-4 text-sm font-bold uppercase tracking-widest disabled:opacity-60"
         >
-          <span className="relative z-10">
-            {isSubmitting
-              ? "Processing Request..."
-              : "Confirm Consultation Inquiry"}
-          </span>
-          <div className="absolute inset-0 bg-linear-to-r from-sage-800 to-sage-700 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          {isSubmitting
+            ? "Processing Request..."
+            : "Confirm Consultation Inquiry"}
         </button>
 
-        <p className="text-center text-xs sm:text-[10px] text-sage-600 font-bold uppercase tracking-widest">
+        <p className="text-center text-xs text-slate-500 font-medium uppercase tracking-widest">
           Secure & Confidential Process
         </p>
       </form>

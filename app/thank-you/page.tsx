@@ -36,7 +36,7 @@ const ThankYouPage = () => {
 
   return (
     <div className="min-h-screen pt-20 bg-cream-50/30 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className={`relative group ${showColor ? 'grayscale-0' : 'grayscale'} transition-all duration-[3000ms] ease-in-out mb-12`}>
           <div className="relative h-[250px] md:h-[400px] rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white transform hover:scale-[1.01] transition-transform">
             <Image

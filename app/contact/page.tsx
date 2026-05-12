@@ -51,7 +51,7 @@ const ContactPage = () => {
       </section>
 
       {/* 2. CLINICAL LANDING & TRUST (BELOW FORM) */}
-      <section className="py-24 bg-white relative overflow-hidden">
+      <section className="py-14 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="space-y-10">
@@ -109,7 +109,7 @@ const ContactPage = () => {
       </section>
 
       {/* 3. MAP & DIRECT INFO */}
-      <section className="py-24 bg-sage-50/50">
+      <section className="py-14 bg-sage-50/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center mb-16 gap-12">
             <div className="flex items-center gap-6 group">

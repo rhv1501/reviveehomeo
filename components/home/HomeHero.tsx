@@ -3,130 +3,64 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import doctorPortrait from "../../assets/Photo.jpg";
-const remedyPills =
-  "https://images.unsplash.com/photo-1725267882596-2d08e560b250?q=80&w=1053&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+import heroBg from "../../assets/homeopathy_hero_bg.png";
 
 const HomeHero: React.FC = () => {
   return (
-    <section className="relative overflow-hidden pt-20 pb-12 md:pt-36 md:pb-24 premium-gradient">
-      {/* Dynamic Background Elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute left-[-5%] top-[-5%] h-125 w-125 rounded-full bg-sage-100/70 blur-[120px] animate-pulse" />
-        <div className="absolute right-[-5%] top-[10%] h-150 w-150 rounded-full bg-terracotta-50/80 blur-[140px]" />
-      </div>
+    <section className="relative min-h-[100svh] flex items-end bg-slate-900 text-white">
+      {/* Full-bleed background image */}
+      <Image
+        src={heroBg}
+        alt="Homeopathic remedies — Revive Homeo Clinic"
+        fill
+        className="object-cover object-center"
+        priority
+      />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-18 items-center">
-          <div className="space-y-5 md:space-y-8 animate-slide-up">
-            <h1 className="text-[2.45rem] sm:text-6xl lg:text-7xl xl:text-8xl font-playfair font-bold leading-[1.06] sm:leading-[1.03] tracking-tight text-sage-900 break-words">
-              Personalised medicine for
-              <span className="italic text-terracotta-600"> acute and chronic complaints.</span>
-            </h1>
+      {/* Gradient overlay — heavier at the bottom where text lives */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/75 to-black/20" />
 
-            <p className="max-w-xl text-[1.12rem] sm:text-lg md:text-xl leading-relaxed text-sage-700 font-medium">
-              Evidence-based homeopathic treatments for everything from a common cold to complex cases like cancer, with structured case assessment, personalised prescriptions, and monitored follow-up.
-            </p>
+      {/* Content anchored at the bottom */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 pb-20 sm:pb-24 pt-24">
+        <div className="max-w-2xl space-y-5">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight">
+            Root-Cause Healing<br />
+            <span className="text-sage-300">for Chronic Conditions.</span>
+          </h1>
 
-            <div className="grid grid-cols-1 sm:flex gap-3 sm:gap-4 pt-1">
-              <Link
-                href="/online-consultation"
-                className="group btn-premium px-8 sm:px-10 py-4 sm:py-5 text-base max-sm:text-lg text-center shadow-xl shadow-sage-900/20"
-              >
-                Book Clinical Consultation
-              </Link>
-              <Link
-                href="/treatments"
-                className="group btn-outline-premium px-8 sm:px-10 py-4 sm:py-5 text-base max-sm:text-lg text-center bg-white/55 backdrop-blur-sm"
-              >
-                Review Treatment Areas
-              </Link>
-            </div>
+          <p className="text-base sm:text-lg text-white/75 leading-relaxed max-w-lg">
+            Evidence-based, personalised homeopathic care that treats the root — not just the symptom.
+          </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3">
-              <div className="rounded-2xl border border-sage-200 bg-white/85 px-4 py-2.5 text-sm max-sm:text-base font-semibold text-sage-800">
-                Individual case analysis
-              </div>
-              <div className="rounded-2xl border border-sage-200 bg-white/85 px-4 py-2.5 text-sm max-sm:text-base font-semibold text-sage-800">
-                Gentle long-term approach
-              </div>
-              <div className="rounded-2xl border border-sage-200 bg-white/85 px-4 py-2.5 text-sm max-sm:text-base font-semibold text-sage-800">
-                In-clinic and online consults
-              </div>
-            </div>
-
-            <p className="text-sm max-sm:text-base text-sage-600 font-medium">
-              Easy appointment flow: choose mode, share concerns, start your
-              guided treatment. Trusted clinical care since 2007.
-            </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 pt-4 sm:pt-6 border-t border-sage-200/70">
-              <div className="rounded-2xl bg-white/85 border border-sage-100 px-4 py-3 text-center">
-                <p className="text-2xl sm:text-3xl font-playfair font-bold text-sage-900">
-                  17+
-                </p>
-                <p className="text-[11px] max-sm:text-xs uppercase tracking-[0.12em] text-sage-600 font-bold">
-                  Years Practice
-                </p>
-              </div>
-              <div className="rounded-2xl bg-white/85 border border-sage-100 px-4 py-3 text-center">
-                <p className="text-2xl sm:text-3xl font-playfair font-bold text-sage-900">
-                  5k+
-                </p>
-                <p className="text-[11px] max-sm:text-xs uppercase tracking-[0.12em] text-sage-600 font-bold">
-                  Patients Guided
-                </p>
-              </div>
-              <div className="rounded-2xl bg-white/85 border border-sage-100 px-4 py-3 text-center">
-                <p className="text-2xl sm:text-3xl font-playfair font-bold text-sage-900">
-                  40+
-                </p>
-                <p className="text-[11px] max-sm:text-xs uppercase tracking-[0.12em] text-sage-600 font-bold">
-                  Legacy Years
-                </p>
-              </div>
-            </div>
+          {/* CTAs */}
+          <div className="flex flex-col sm:flex-row gap-3 pt-2">
+            <Link
+              href="/online-consultation"
+              className="btn-premium py-4 text-center w-full sm:w-auto sm:px-10 text-base"
+            >
+              Book a Consultation
+            </Link>
+            <Link
+              href="/treatments"
+              className="py-4 text-center w-full sm:w-auto sm:px-10 text-base font-medium text-white border border-white/30 rounded bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors"
+            >
+              Explore Treatments
+            </Link>
           </div>
 
-          <div className="relative animate-fade-in group">
-            <div className="absolute -inset-4 bg-sage-200/45 rounded-[4rem] rotate-2 -z-10 blur-2xl group-hover:rotate-1 transition-transform duration-1000" />
-
-            <div className="grid gap-4 sm:gap-5 lg:gap-6">
-              <div className="relative aspect-4/5 rounded-[3.4rem] overflow-hidden shadow-2xl border-4 border-white">
-                <Image
-                  src={doctorPortrait}
-                  alt="Dr. Nritiya Dave"
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
-                  className="object-cover object-top scale-105 group-hover:scale-100 transition-transform duration-1000"
-                  priority
-                />
-                <div className="absolute inset-0 bg-linear-to-t from-sage-900/60 via-transparent to-transparent" />
-
-                <div className="absolute bottom-5 left-5 right-5 rounded-3xl bg-white/88 backdrop-blur-md px-4 py-3.5 border border-white/90 shadow-lg">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-sage-700 mb-1.5">
-                    Led by Dr. Nritiya Dave
-                  </p>
-                  <h4 className="text-lg sm:text-xl font-playfair font-bold text-sage-900 leading-tight">
-                    Care that is calm, clear, and consistent.
-                  </h4>
-                </div>
-              </div>
-
-              <div className="relative overflow-hidden rounded-[2.4rem] border border-white bg-white shadow-[0_18px_48px_rgba(24,34,21,0.1)]">
-                <Image
-                  src={remedyPills}
-                  alt="Homeopathic pills and remedies"
-                  width={1200}
-                  height={900}
-                  className="h-full w-full object-cover"
-                />
-                <div className="absolute inset-x-4 bottom-4 rounded-2xl bg-white/90 backdrop-blur-sm px-3.5 py-2.5 border border-white/80">
-                  <p className="text-xs sm:text-sm font-semibold text-sage-800 text-center">
-                    Recognizable remedies. Personalized prescriptions.
-                  </p>
-                </div>
-              </div>
+          {/* Trust stats */}
+          <div className="flex gap-8 pt-6 border-t border-white/15">
+            <div>
+              <p className="text-xl font-bold text-white">17+</p>
+              <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50 mt-0.5">Years Experience</p>
+            </div>
+            <div>
+              <p className="text-xl font-bold text-white">5,000+</p>
+              <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50 mt-0.5">Patients Treated</p>
+            </div>
+            <div>
+              <p className="text-xl font-bold text-white">4.9 ★</p>
+              <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50 mt-0.5">Google Rating</p>
             </div>
           </div>
         </div>

@@ -26,11 +26,7 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-sage-900 text-cream-50 pt-20 pb-10 relative overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -top-24 -right-20 h-64 w-64 rounded-full bg-sage-700/40 blur-3xl" />
-        <div className="absolute -bottom-24 -left-16 h-64 w-64 rounded-full bg-terracotta-500/15 blur-3xl" />
-      </div>
+    <footer className="bg-sage-900 text-white pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 relative z-10">
           <div className="space-y-6">
@@ -190,12 +186,12 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="border-t border-sage-700 pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 relative z-10">
-          <p className="text-sage-600 text-sm font-medium uppercase tracking-widest text-center md:text-left">
+        <div className="border-t border-sage-700 pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          <p className="text-sage-300 text-sm font-medium uppercase tracking-widest text-center md:text-left">
             © {currentYear} Revivee Homeo Clinic. Personalized homeopathic care
             in Chennai.
           </p>
-          <div className="flex space-x-6 text-sm text-sage-600 font-medium">
+          <div className="flex space-x-6 text-sm text-sage-300 font-medium">
             <a
               href={`mailto:${contactData.clinic_info.email.general}`}
               className="hover:text-sage-200"

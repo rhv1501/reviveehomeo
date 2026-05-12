@@ -99,7 +99,7 @@ const FAQSection: React.FC = () => {
   };
 
   return (
-    <section className="py-20 2k:py-32 bg-cream-100/70">
+    <section className="py-12 2k:py-32 bg-cream-100/70">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}

@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 10);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -33,127 +33,122 @@ const Navbar: React.FC = () => {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-        isScrolled
-          ? "py-2.5 bg-white"
-          : "py-4 bg-linear-to-b from-white/85 via-white/65 to-transparent"
+      className={`fixed top-0 w-full z-50 transition-all duration-300 bg-white ${
+        isScrolled ? "border-b border-slate-200 shadow-sm py-3" : "py-5 border-b border-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-        <div
-          className={`flex justify-between items-center rounded-2xl transition-all duration-500 ${
-            isScrolled
-              ? "bg-white px-2 sm:px-3 py-2"
-              : "bg-white/72 px-2 sm:px-3 py-2 shadow-[0_6px_18px_rgba(24,34,21,0.06)]"
-          }`}
-        >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center">
           <Link href="/" className="flex items-center space-x-3 group">
-            <div className="relative w-10 h-10 2k:w-12 2k:h-12 bg-white rounded-2xl shadow-sm border border-sage-100 flex items-center justify-center p-1 group-hover:scale-105 transition-transform duration-300">
-              <Image
-                src="/assets/logo_1.png"
-                alt="Revivee Homeo Clinic Logo"
-                width={40}
-                height={40}
-                className="object-contain"
-              />
-            </div>
+            <Image
+              src="/assets/logo_1.png"
+              alt="Revivee Homeo Clinic Logo"
+              width={40}
+              height={40}
+              className="object-contain"
+            />
             <div className="flex flex-col">
-              <span className="font-playfair font-bold text-xl 2k:text-2xl text-sage-900 tracking-tight leading-none group-hover:text-sage-700 transition-colors">
+              <span className="font-bold text-xl text-sage-900 tracking-tight leading-none group-hover:text-sage-700 transition-colors">
                 REVIVEE
               </span>
-              <span className="text-[10px] 2k:text-xs font-bold tracking-[0.2em] text-terracotta-600 leading-none mt-1 uppercase">
+              <span className="text-[10px] font-bold tracking-widest text-slate-500 leading-none mt-1 uppercase">
                 Homeo Clinic
               </span>
             </div>
           </Link>
 
-          <div className="hidden md:flex items-center space-x-1">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.path}
-                className={`px-4 py-2 text-sm font-semibold transition-all duration-300 rounded-full group relative ${
-                  isActivePath(item.path)
-                    ? "text-sage-900 bg-sage-100"
-                    : "text-sage-700 hover:text-sage-900 hover:bg-sage-100/75"
-                }`}
-              >
-                {item.name}
-                {isActivePath(item.path) && (
-                  <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-terracotta-500 rounded-full"></span>
-                )}
-              </Link>
-            ))}
+          <div className="hidden lg:flex items-center space-x-8">
+            <div className="flex items-center space-x-6">
+              {navItems.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.path}
+                  className={`text-sm font-medium transition-colors hover:text-sage-700 ${
+                    isActivePath(item.path)
+                      ? "text-sage-700 font-semibold"
+                      : "text-slate-600"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
 
-            <div className="ml-6 flex items-center space-x-4">
+            <div className="flex items-center space-x-6 pl-6 border-l border-slate-200">
+              <a 
+                href="tel:+919841413197" 
+                className="flex items-center space-x-2 text-slate-700 hover:text-sage-700 font-semibold transition-colors text-sm"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                <span>+91 98414 13197</span>
+              </a>
               <Link
                 href={pathname === "/online-consultation" ? "#request-form" : "/contact"}
-                className="btn-premium py-2.5 px-6 text-sm shadow-none hover:shadow-lg"
+                className="btn-premium py-2 px-5 text-sm"
               >
-                {pathname === "/online-consultation" ? "Book Online" : "Book a Visit"}
+                {pathname === "/online-consultation" ? "Book Online" : "Book Consultation"}
               </Link>
             </div>
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="lg:hidden flex items-center space-x-4">
+            <Link
+              href="/contact"
+              className="btn-premium py-2 px-4 text-xs"
+            >
+              Book
+            </Link>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-xl text-sage-800 hover:bg-sage-100 transition-colors"
+              className="p-2 text-slate-600 hover:text-sage-900 transition-colors"
               aria-label={isOpen ? "Close menu" : "Open menu"}
-              aria-expanded={isOpen}
             >
-              <div className="w-6 h-5 relative flex flex-col justify-between">
-                <span
-                  className={`block h-0.5 w-6 bg-current transform transition-all duration-300 ${
-                    isOpen ? "rotate-45 translate-y-2" : ""
-                  }`}
-                ></span>
-                <span
-                  className={`block h-0.5 w-6 bg-current transition-all duration-300 ${
-                    isOpen ? "opacity-0" : "opacity-100"
-                  }`}
-                ></span>
-                <span
-                  className={`block h-0.5 w-6 bg-current transform transition-all duration-300 ${
-                    isOpen ? "-rotate-45 -translate-y-2.5" : ""
-                  }`}
-                ></span>
-              </div>
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {isOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
             </button>
           </div>
         </div>
 
         {/* Mobile menu */}
-        <div
-          className={`md:hidden transition-all duration-500 ease-in-out overflow-hidden ${
-            isOpen ? "max-h-screen opacity-100 py-6" : "max-h-0 opacity-0"
-          }`}
-        >
-          <div className="space-y-2 bg-white/95 backdrop-blur-lg rounded-4xl p-6 border border-sage-200 shadow-xl">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.path}
-                onClick={() => setIsOpen(false)}
-                className={`block px-4 py-3 rounded-2xl text-base font-semibold transition-all ${
-                  isActivePath(item.path)
-                    ? "bg-sage-200 text-sage-900"
-                    : "text-sage-700 hover:bg-sage-100 hover:text-sage-900"
-                }`}
-              >
-                {item.name}
-              </Link>
-            ))}
-            <Link
-              href={pathname === "/online-consultation" ? "#request-form" : "/contact"}
-              onClick={() => setIsOpen(false)}
-              className="block w-full mt-4 text-center btn-premium"
-            >
-              {pathname === "/online-consultation" ? "Book Online" : "Book a Visit"}
-            </Link>
+        {isOpen && (
+          <div className="lg:hidden mt-4 pt-4 border-t border-slate-100 bg-white shadow-lg absolute left-0 w-full px-4 pb-6">
+            <div className="flex flex-col space-y-4">
+              {navItems.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.path}
+                  onClick={() => setIsOpen(false)}
+                  className={`text-base font-medium transition-colors ${
+                    isActivePath(item.path)
+                      ? "text-sage-700"
+                      : "text-slate-600"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              ))}
+              <div className="pt-4 mt-2 border-t border-slate-100">
+                <a 
+                  href="tel:+919841413197" 
+                  className="flex items-center space-x-2 text-slate-700 font-semibold py-2"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                  <span>+91 98414 13197</span>
+                </a>
+              </div>
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </nav>
   );

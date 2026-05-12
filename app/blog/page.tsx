@@ -29,7 +29,7 @@ const BlogPage = () => {
       <Hero title={blogData.title} subtitle={blogData.subtitle} />
 
       {/* Featured Posts / Grid Section */}
-      <section className="py-24 relative">
+      <section className="py-14 relative">
         <div className="absolute top-0 right-0 w-96 h-96 bg-sage-100/50 rounded-full blur-[120px] pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-terracotta-50/50 rounded-full blur-[100px] pointer-events-none" />
 
@@ -74,7 +74,7 @@ const BlogPage = () => {
       </section>
 
       {/* Newsletter / Motivation Section */}
-      <section className="py-24 bg-white">
+      <section className="py-14 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative glass-card rounded-[4rem] p-12 md:p-20 overflow-hidden border-2 border-sage-50 shadow-2xl">
             <div className="absolute top-0 right-0 w-80 h-80 bg-sage-50 rounded-full blur-[100px] opacity-60 -mr-20 -mt-20" />
