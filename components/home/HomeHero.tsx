@@ -11,7 +11,7 @@ const HomeHero: React.FC = () => {
       {/* Full-bleed background image */}
       <Image
         src={heroBg}
-        alt="Homeopathic remedies — Revive Homeo Clinic"
+        alt="Homeopathic remedies, Revive Homeo Clinic"
         fill
         className="object-cover object-center"
         priority
@@ -24,12 +24,12 @@ const HomeHero: React.FC = () => {
       <div className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 pb-20 sm:pb-24 pt-24">
         <div className="max-w-2xl space-y-5">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight">
-            Root-Cause Healing<br />
-            <span className="text-sage-300">for Chronic Conditions.</span>
+            Root-Cause Healing for all your<br />
+            <span className="text-sage-300">Health Concerns: The Homeopathic Way!</span>
           </h1>
 
           <p className="text-base sm:text-lg text-white/75 leading-relaxed max-w-lg">
-            Evidence-based, personalised homeopathic care that treats the root — not just the symptom.
+            Evidence-based, personalised homeopathic care that treats the root, not just the symptom.
           </p>
 
           {/* CTAs */}

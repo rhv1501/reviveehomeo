@@ -4,8 +4,6 @@ import Image from "next/image";
 import { Metadata } from "next";
 import OnlineConsultationForm from "../../components/OnlineConsultationForm";
 import contactData from "../../data/contact.json";
-import onlineHero from "../../assets/online_hero.png";
-import lifestyleImg from "../../assets/minimalist_lifestyle.png";
 import {
   BASE_KEYWORDS,
   PAGE_DESCRIPTIONS,
@@ -31,8 +29,8 @@ const experienceFeatures = [
     icon: "🌍",
   },
   {
-    title: "Vibrant Results",
-    desc: "Proven protocols for skin, hormonal, and pediatric wellness.",
+    title: "Comprehensive Healing",
+    desc: "Proven protocols for a wide spectrum of acute and chronic health conditions.",
     icon: "🌿",
   },
   {
@@ -45,7 +43,7 @@ const experienceFeatures = [
 const processSteps = [
   {
     title: "Secure Your Slot",
-    text: "Share your health journey via our encrypted concierge form.",
+    text: "Share your health journey via our encrypted online form.",
   },
   {
     title: "Personalized Prep",
@@ -76,8 +74,10 @@ const OnlineConsultationPage = () => {
 
               <p className="text-lg text-slate-600 leading-relaxed max-w-xl">
                 Experience the peak of homeopathic excellence from the comfort
-                of your sanctuary. Our virtual concierge bridges the gap between
+                of your sanctuary. Our online consultations bridge the gap between
                 traditional wisdom and modern convenience.
+                <br /><br />
+                <strong>Note:</strong> Initial online consults are 30 mins, and follow-ups are 15 mins. Direct or In-Person Consultations are also available at our clinic. All consultations are by prior appointment only. Sunday is a holiday.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -115,7 +115,7 @@ const OnlineConsultationPage = () => {
 
             <div className="relative h-[400px] sm:h-[500px] lg:h-[600px] rounded-xl overflow-hidden shadow-sm border border-slate-200 animate-fade-in">
               <Image
-                src={onlineHero}
+                src="/online.png"
                 alt="Virtual Online Consultation"
                 fill
                 className="object-cover"
@@ -163,7 +163,7 @@ const OnlineConsultationPage = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="relative h-[400px] lg:h-[600px] rounded-xl overflow-hidden border border-slate-200 shadow-sm bg-slate-100">
               <Image
-                src={lifestyleImg}
+                src="/space.webp"
                 alt="Homeopathy Lifestyle"
                 fill
                 className="object-cover"
@@ -240,7 +240,7 @@ const OnlineConsultationPage = () => {
                     Available Mode
                   </p>
                   <p className="text-lg font-bold">
-                    Video / Audio / Home Visit
+                    Video / Audio / Direct or In-Person
                   </p>
                 </div>
               </div>
@@ -255,7 +255,7 @@ const OnlineConsultationPage = () => {
       <section className="py-14 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="section-kicker mb-4">Concierge Support</h2>
+            <h2 className="section-kicker mb-4">Online Consultation Support</h2>
             <h3 className="section-heading">Frequently Asked Questions</h3>
           </div>
 
@@ -271,7 +271,7 @@ const OnlineConsultationPage = () => {
               },
               {
                 q: "Which mode is best for me?",
-                a: "We recommend HD Video for first-time consultations to build rapport. Phone or WhatsApp can be suitable for quick follow-ups. Our concierge will guide you upon booking.",
+                a: "We recommend HD Video for first-time consultations to build rapport. Phone or WhatsApp can be suitable for quick follow-ups. Our team will guide you upon booking.",
               },
             ].map((faq, idx) => (
               <div

@@ -195,7 +195,7 @@ export default function Home() {
             </blockquote>
             <div className="w-12 h-px bg-sage-600 mx-auto mb-8" />
             <p className="font-bold text-white text-base">Dr. Nritiya Dave</p>
-            <p className="text-sage-400 text-sm mb-10">Chief Homeopath</p>
+            <p className="text-sage-400 text-sm mb-10">BHMS, PG (Hom) UK | Chief Homeopath</p>
             <Link href="/about" className="btn-premium bg-white text-sage-900 hover:bg-slate-50 hover:border-slate-50 px-8 py-3 inline-block">
               Read Our Story
             </Link>

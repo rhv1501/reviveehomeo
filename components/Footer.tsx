@@ -146,15 +146,11 @@ const Footer: React.FC = () => {
                 <p className="text-xs font-bold uppercase tracking-widest text-terracotta-600">
                   Location
                 </p>
-                <p className="text-sage-100 text-sm leading-relaxed">
-                  {contactData.clinic_info.address.street1}{" "}
-                  {contactData.clinic_info.address.street}
+                <p className="text-sage-100 text-sm leading-relaxed whitespace-pre-wrap">
+                  {contactData.clinic_info.address.street1} {contactData.clinic_info.address.street}
                 </p>
-                <p className="text-sage-200 text-sm leading-relaxed">
-                  {contactData.clinic_info.address.landmark},{" "}
-                  {contactData.clinic_info.address.city},{" "}
-                  {contactData.clinic_info.address.state}{" "}
-                  {contactData.clinic_info.address.zip}
+                <p className="text-sage-200 text-sm leading-relaxed whitespace-pre-wrap">
+                  {contactData.clinic_info.address.landmark}, {contactData.clinic_info.address.city}, {contactData.clinic_info.address.state} {contactData.clinic_info.address.zip}
                 </p>
                 <a
                   href={contactData.clinic_info.address.Location}
@@ -170,10 +166,10 @@ const Footer: React.FC = () => {
                   Clinical Hours
                 </p>
                 <p className="text-sage-100 text-sm">
-                  Mon - Sat: 10:00 AM - 8:00 PM
+                  Mon - Sat: 10:00 AM - 1:00 PM & 4:00 PM - 8:00 PM
                 </p>
                 <p className="text-sage-200 text-sm italic">
-                  Sunday: Consultations via Appointment Only
+                  By prior appointment only. Sunday holiday.
                 </p>
               </div>
               <Link

@@ -1,6 +1,6 @@
 {
   "title": "Contact Us",
-  "subtitle": "We’re Here to Listen, Treat, and Heal - Contact Our Clinic",
+  "subtitle": "We’re Here to Listen, Treat, and Heal. Contact Our Clinic",
   "clinic_info": {
     "name": "Revivee Homeo Clinic",
     "tagline": "Restoring health, Reviving lives",
@@ -15,8 +15,8 @@
       "Location": "https://maps.app.goo.gl/3uxFwRgfe1jckWQe8"
     },
     "phone": {
-      "primary": "+91 98414 13197",
-      "WhatsApp": "+91 98414 13197"
+      "primary": "+91 96771 83197",
+      "WhatsApp": "+91 96771 83197"
     },
     "email": {
       "general": "dr.nritiya@gmail.com",
@@ -31,13 +31,13 @@
     }
   },
   "hours": {
-    "monday": "10:00 AM - 8:00 PM",
-    "tuesday": "10:00 AM - 8:00 PM",
-    "wednesday": "10:00 AM - 8:00 PM",
-    "thursday": "10:00 AM - 8:00 PM",
-    "friday": "10:00 AM - 8:00 PM",
-    "saturday": "10:00 AM - 8:00 PM",
-    "sunday": "Closed"
+    "monday": "10:00 AM - 1:00 PM, 4:00 PM - 8:00 PM",
+    "tuesday": "10:00 AM - 1:00 PM, 4:00 PM - 8:00 PM",
+    "wednesday": "10:00 AM - 1:00 PM, 4:00 PM - 8:00 PM",
+    "thursday": "10:00 AM - 1:00 PM, 4:00 PM - 8:00 PM",
+    "friday": "10:00 AM - 1:00 PM, 4:00 PM - 8:00 PM",
+    "saturday": "10:00 AM - 1:00 PM, 4:00 PM - 8:00 PM",
+    "sunday": "Closed (Holiday)"
   },
 
   "contact_form": {

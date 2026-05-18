@@ -96,7 +96,7 @@ const BookingGuide = () => {
                 Global Access
               </span>
               <h3 className="text-3xl font-bold text-sage-900">
-                Virtual Concierge.
+                Online Consultations.
               </h3>
             </div>
 

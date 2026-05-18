@@ -87,7 +87,7 @@ const ContactFormInner = () => {
       >
         <div className="space-y-6">
           <h4 className="text-2xl font-playfair font-bold text-sage-900 sm:text-3xl">
-            Inquiry Questionnaire
+            Enquiry Questionnaire
           </h4>
           <p className="max-w-2xl text-base font-semibold tracking-wide text-sage-700">
             Fields marked with (*) are required for effective case analysis.
@@ -157,7 +157,7 @@ const ContactFormInner = () => {
 
         <div className="space-y-2">
           <label className="text-xs font-bold text-sage-600 uppercase tracking-widest ml-1 sm:text-sm">
-            Nature of Inquiry / Main Symptoms *
+            Nature of Enquiry / Main Symptoms *
           </label>
           <textarea
             name="message"
@@ -184,8 +184,8 @@ const ContactFormInner = () => {
           className="w-full btn-premium py-4 sm:py-5 text-sm sm:text-base font-bold tracking-[0.16em] uppercase disabled:opacity-50"
         >
           {isSubmitting
-            ? "Processing Inquiry..."
-            : "Confirm My Inquiry Session"}
+            ? "Processing Enquiry..."
+            : "Confirm My Enquiry Session"}
         </button>
       </form>
     </div>

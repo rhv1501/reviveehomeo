@@ -4,7 +4,15 @@ import React, { Suspense } from "react";
 import Image from "next/image";
 import contactData from "../../data/contact.json";
 import ContactForm from "../../components/ContactForm";
-import doctorPortrait from "../../assets/Photo.jpg";
+import clinicImg1 from "../../assets/clinic_interior.png";
+import clinicImg2 from "../../assets/minimalist_lifestyle.png";
+import clinicImg3 from "../../assets/online_hero.png";
+
+const galleryImages = [
+  { src: clinicImg1, alt: "Revive Clinic Interior" },
+  { src: clinicImg2, alt: "Health Camp & Care" },
+  { src: clinicImg3, alt: "Patient Support" },
+];
 
 
 const ContactPage = () => {
@@ -25,14 +33,13 @@ const ContactPage = () => {
           <div className="space-y-16">
             <div className="space-y-6">
               <h1 className="text-4xl md:text-6xl font-playfair font-bold text-sage-900 tracking-tight">
-                Visit Revivee at{" "}
+                Consult with Dr Nritiya Dave at clinic -{" "}
                 <span className="italic text-terracotta-600">
-                  Dr Rajivi Towers.
+                  @Dr Rajivi Towers.
                 </span>
               </h1>
               <p className="text-lg text-sage-700 font-medium max-w-2xl mx-auto">
-                Share your details below and we&apos;ll guide you to the right
-                consultation, the right location, and the right next step.
+                Share your details in the form and we&apos;ll connect you with the right consultation, location, and next steps.
               </p>
             </div>
 
@@ -86,21 +93,30 @@ const ContactPage = () => {
               </div>
             </div>
 
-            <div className="relative rounded-[4rem] overflow-hidden shadow-2xl border-4 border-white aspect-square bg-sage-50">
-              <Image
-                src={doctorPortrait}
-                alt="Dr. Nritiya Dave"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover object-top"
-              />
-              <div className="absolute inset-0 bg-linear-to-t from-sage-950/70 via-transparent to-transparent" />
-              <div className="absolute bottom-8 left-8 right-8 space-y-4">
+            <div className="relative rounded-[4rem] overflow-hidden shadow-2xl border-4 border-white aspect-square bg-sage-50 group">
+              <div className="flex overflow-x-auto snap-x snap-mandatory h-full w-full custom-scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+                {galleryImages.map((img, idx) => (
+                  <div key={idx} className="relative w-full h-full shrink-0 snap-center">
+                    <Image
+                      src={img.src}
+                      alt={img.alt}
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                      className="object-cover object-center"
+                    />
+                    <div className="absolute inset-0 bg-linear-to-t from-sage-950/70 via-transparent to-transparent pointer-events-none" />
+                  </div>
+                ))}
+              </div>
+              <div className="absolute bottom-8 left-8 right-8 space-y-4 pointer-events-none">
                 <div className="inline-block rounded-full bg-white/20 backdrop-blur-md px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.28em] text-white">
-                  Real clinic presence
+                  Clinic & Camps
                 </div>
                 <h4 className="text-2xl font-playfair font-bold text-white leading-tight">
-                  Human-led care with a calm, clean visual style.
+                  A healing environment built for you.
+                  <span className="block text-sm font-sans font-normal text-sage-200 mt-2 opacity-80">
+                    ← Swipe to view gallery →
+                  </span>
                 </h4>
               </div>
             </div>

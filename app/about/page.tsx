@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import DoctorCard from "../../components/DoctorCard";
 import aboutData from "../../data/about.json";
-import heritageBridge from "../../assets/heritage_bridge.png";
+
 
 const AboutPage = () => {
   return (
@@ -14,13 +14,13 @@ const AboutPage = () => {
       <section className="pt-32 pb-20 md:pt-44 md:pb-28 border-b border-slate-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-sage-900 leading-[1.1] tracking-tight mb-8">
-            Where Heritage <br />
-            <span className="text-sage-700">Meets Modern Care.</span>
+            Integrative Care. Homeopathic Heart. <br />
+            <span className="text-sage-700">Medical Mind.</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-slate-600 leading-relaxed">
-            Since 2007, Revivee Homeo Clinic has been dedicated to restoring health through evidence-based homeopathic treatments. We treat both acute and chronic cases, from a common cold to cancer,
-            guided by a clinical lineage that spans over four decades.
+          <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto">
+            Rooted in Homeopathy. Informed by Modern Medicine. <br /><br />
+            For nearly two decades, patients have come to Revivee Homeo Clinic seeking real answers for acute conditions, for chronic struggles, and for everything in between. Our approach is evidence-based, our roots run deep, and every case we take is treated with the same clinical precision.
           </p>
         </div>
       </section>
@@ -33,8 +33,8 @@ const AboutPage = () => {
             <div className="relative animate-fade-in">
               <div className="relative aspect-square rounded-xl overflow-hidden shadow-sm border border-slate-200">
                 <Image
-                  src={heritageBridge}
-                  alt="Traditional and Modern Homeopathy"
+                  src="/heritage.jpeg"
+                  alt="Our Heritage"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
                   className="object-cover"
@@ -57,13 +57,10 @@ const AboutPage = () => {
 
               <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
                 <p>
-                  Revivee Homeo Clinic is built on a foundation of generational expertise. 
-                  The foundation of our practice was laid by Dr. Nritiya Dave&apos;s father, 
-                  a passionate homeopath who has devoted over 40 years to the practice of healing through nature.
+                  Our practice is rooted in something rare: a generational transfer of homeopathic wisdom. Dr. Nritiya Dave trained under her father, a dedicated homeopath with over 40 years of healing experience, absorbing the clinical instincts and case wisdom that only decades of practice can offer.
                 </p>
                 <p>
-                  Today, we continue this journey by blending time-tested homeopathic principles 
-                  with modern health insights to deliver holistic, trustworthy care for every generation.
+                  At Revivee, that foundation is carried forward with personal clinical depth and a keen awareness of modern medical advances in homeopathy and beyond.
                 </p>
               </div>
 
@@ -140,7 +137,7 @@ const AboutPage = () => {
                  <span className="text-sage-200">worldwide impact.</span>
                </h3>
                <p className="text-lg text-sage-100 leading-relaxed">
-                  Whether you visit us in Purasawalkam or connect from across the globe, 
+                  Whether you visit us at our Clinic in Purasawalkam or connect from across the globe, 
                   you are joining a legacy that values your health as our highest priority.
                </p>
                <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center">

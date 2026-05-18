@@ -26,7 +26,7 @@ const OnlineConsultationForm: React.FC = () => {
     email: "",
     phone: "",
     age: "",
-    consultationType: "",
+    natureOfProblem: "",
     preferredDate: "",
     preferredTime: "",
     mode: "Video / Phone",
@@ -94,7 +94,7 @@ const OnlineConsultationForm: React.FC = () => {
       >
         <div className="space-y-3">
           <h3 className="text-xs font-bold uppercase tracking-widest text-sage-700">
-            Digital Concierge
+            Online Consultations
           </h3>
           <h2 className="text-3xl sm:text-4xl font-bold text-sage-900 leading-tight">
             Reserve your slot
@@ -167,16 +167,16 @@ const OnlineConsultationForm: React.FC = () => {
         <div className="grid gap-6 md:grid-cols-2 border-t border-slate-100 pt-6">
           <div className="space-y-2">
             <label className="ml-1 text-xs font-bold uppercase tracking-widest text-slate-700">
-              Consultation Type *
+              Nature of Problem / Complaints *
             </label>
             <select
-              name="consultationType"
-              value={formData.consultationType}
+              name="natureOfProblem"
+              value={formData.natureOfProblem}
               onChange={handleChange}
               required
               className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sage-900 outline-none transition-all duration-300 focus:border-sage-500 focus:bg-white focus:ring-2 focus:ring-sage-500/20 appearance-none cursor-pointer"
             >
-              <option value="">Select consultation type</option>
+              <option value="">Select nature of problem</option>
               {consultationOptions.map((option) => (
                 <option key={option} value={option}>
                   {option}
@@ -219,13 +219,13 @@ const OnlineConsultationForm: React.FC = () => {
           </div>
           <div className="space-y-2">
             <label className="ml-1 text-xs font-bold uppercase tracking-widest text-slate-700">
-              Mode of Visit
+              Mode of Consult
             </label>
             <input
               name="mode"
               value={formData.mode}
               onChange={handleChange}
-              placeholder="e.g., Video, Phone, WhatsApp"
+              placeholder="e.g., Video, Phone, WhatsApp, In-Person"
               className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sage-900 outline-none transition-all duration-300 focus:border-sage-500 focus:bg-white focus:ring-2 focus:ring-sage-500/20"
             />
           </div>
