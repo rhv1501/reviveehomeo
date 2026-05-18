@@ -5,17 +5,20 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ScrollToTop from "../components/ScrollToTop";
 import FloatingActionButton from "../components/FloatingActionButton";
+import MobileStickyCTA from "../components/MobileStickyCTA";
 import { BUSINESS_INFO, PAGE_DESCRIPTIONS } from "../utils/seoUtils";
 
 const playfair = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["400", "700"],
   variable: "--font-playfair",
+  display: "swap",
 });
 const inter = Manrope({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
   variable: "--font-inter",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -139,6 +142,7 @@ export default function RootLayout({
           <main className="grow page-main pb-28 sm:pb-0">{children}</main>
           <Footer />
           <FloatingActionButton />
+          <MobileStickyCTA />
         </div>
       </body>
     </html>

@@ -46,6 +46,8 @@ const Navbar: React.FC = () => {
               width={40}
               height={40}
               className="object-contain"
+              priority
+              quality={90}
             />
             <div className="flex flex-col">
               <span className="font-bold text-xl text-sage-900 tracking-tight leading-none group-hover:text-sage-700 transition-colors">

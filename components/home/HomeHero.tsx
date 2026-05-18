@@ -15,6 +15,7 @@ const HomeHero: React.FC = () => {
         fill
         className="object-cover object-center"
         priority
+        quality={90}
       />
 
       {/* Gradient overlay — heavier at the bottom where text lives */}
@@ -24,12 +25,12 @@ const HomeHero: React.FC = () => {
       <div className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 pb-20 sm:pb-24 pt-24">
         <div className="max-w-2xl space-y-5">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight">
-            Root-Cause Healing for all your<br />
-            <span className="text-sage-300">Health Concerns: The Homeopathic Way!</span>
+            Personalised Homeopathy for<br />
+            <span className="text-sage-300">Chronic & Lifestyle Conditions</span>
           </h1>
 
           <p className="text-base sm:text-lg text-white/75 leading-relaxed max-w-lg">
-            Evidence-based, personalised homeopathic care that treats the root, not just the symptom.
+            Trusted by 5000+ patients across Chennai for PCOS, skin disorders, allergies, pain management, and holistic healing.
           </p>
 
           {/* CTAs */}
@@ -38,14 +39,19 @@ const HomeHero: React.FC = () => {
               href="/online-consultation"
               className="btn-premium py-4 text-center w-full sm:w-auto sm:px-10 text-base"
             >
-              Book a Consultation
+              Book Consultation
             </Link>
             <Link
               href="/treatments"
               className="py-4 text-center w-full sm:w-auto sm:px-10 text-base font-medium text-white border border-white/30 rounded bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors"
             >
-              Explore Treatments
+              View Treatments
             </Link>
+          </div>
+          
+          <div className="flex items-center gap-2 pt-2 text-xs font-medium text-sage-200">
+             <svg className="w-4 h-4 text-sage-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+             Consultation takes only 20–30 minutes
           </div>
 
           {/* Trust stats */}

@@ -38,6 +38,10 @@
   }
 }
 
+.animate-fade-in {
+  will-change: transform, opacity;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #212529;

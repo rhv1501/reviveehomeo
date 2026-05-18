@@ -32,7 +32,11 @@ const FloatingActionButton: React.FC = () => {
   const whatsappUrl = `https://wa.me/${contactData.clinic_info.phone.primary.replace(/\D/g, "")}`;
 
   return (
-    <div className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-9999 flex flex-col items-end space-y-4">
+    <div 
+      className="hidden sm:flex fixed bottom-6 right-6 md:bottom-8 md:right-8 z-9999 flex-col items-end space-y-4"
+      onMouseEnter={() => setIsOpen(true)}
+      onMouseLeave={() => setIsOpen(false)}
+    >
       <div
         className={`flex flex-col items-end space-y-4 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
           isOpen
