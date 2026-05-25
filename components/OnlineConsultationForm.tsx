@@ -268,7 +268,7 @@ const OnlineConsultationForm: React.FC = () => {
         >
           {isSubmitting
             ? "Processing Request..."
-            : "Confirm Consultation Inquiry"}
+            : "Confirm Consultation Enquiry"}
         </button>
 
         <p className="text-center text-xs text-slate-500 font-medium uppercase tracking-widest">

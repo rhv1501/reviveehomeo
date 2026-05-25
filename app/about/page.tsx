@@ -31,13 +31,14 @@ const AboutPage = () => {
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             
             <div className="relative animate-fade-in">
-              <div className="relative aspect-square rounded-xl overflow-hidden shadow-sm border border-slate-200">
+              <div className="relative rounded-xl overflow-hidden shadow-sm border border-slate-200 flex items-center justify-center">
                 <Image
                   src="/heritage.jpeg"
                   alt="Our Heritage"
-                  fill
+                  width={800}
+                  height={800}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
-                  className="object-cover"
+                  className="w-full h-auto object-contain"
                 />
               </div>
               <div className="absolute -bottom-8 -right-8 bg-white border border-slate-200 rounded-lg p-8 max-w-xs shadow-sm hidden md:block">

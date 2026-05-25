@@ -6,7 +6,7 @@
       "category": "Respiratory System",
       "image": "https://images.unsplash.com/photo-1743767587847-08c42b31cdec?q=80&w=1955&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "conditions": [
-        "Asthma",
+        "Asthma & Dust Allergy",
         "Allergic rhinitis (hay fever)",
         "Sinusitis",
         "Bronchitis",
@@ -29,11 +29,12 @@
       "conditions": [
         "Gastritis",
         "Indigestion",
-        "Acidity (heartburn)",
+        "GERD (Acid Reflux & Heartburn)",
         "Irritable Bowel Syndrome (IBS)",
         "Constipation",
         "Diarrhea",
         "Piles (hemorrhoids)",
+        "Gallstones (non-surgical management)",
         "Liver disorders (fatty liver, hepatitis)"
       ],
       "key_benefits": [
@@ -91,7 +92,7 @@
       "category": "Endocrine & Metabolic System",
       "image": "https://img.freepik.com/free-photo/person-holding-anatomic-heart-model-educational-purpose_23-2149894456.jpg?t=st=1768231319~exp=1768234919~hmac=ee3f8fc4dc10aaff3bc57cfd6216cec78d8ccbe1acaf67eea636f714820bde31",
       "conditions": [
-        "Diabetes (supportive care)",
+        "Type 2 DM (supportive care)",
         "Thyroid disorders (hypothyroidism, hyperthyroidism)",
         "Obesity and metabolism regulation"
       ],
@@ -111,10 +112,12 @@
         "Irregular periods",
         "PMS",
         "PCOS/PCOD",
+        "Endometriosis & Adenomyosis",
         "Fibroids",
         "Leucorrhea",
         "Hormonal Disorders",
         "Infertility",
+        "Bad Obstetric History (BOH) & Recurrent abortions",
         "Lactation problems",
         "Menopausal Complaints"
       ],
@@ -122,14 +125,14 @@
         "Balanced menstrual cycles",
         "Reduced PMS symptoms",
         "Improved hormonal balance",
-        "Enhanced reproductive health",
+        "Enhanced reproductive health & uterine strength",
         "Easier menopausal transition"
       ],
       "description": "Gentle, effective care for all stages of a woman's reproductive life. Our treatments address hormonal imbalances, menstrual irregularities, and menopausal symptoms, supporting your body's natural rhythms and promoting overall reproductive wellness."
     },
     {
       "category": "Male Reproductive Health",
-      "image": "https://img.freepik.com/free-photo/young-latin-man-covering-his-genitals-with-hands-bedroom_839833-27436.jpg?t=st=1768231097~exp=1768234697~hmac=259ba77e1d70874e08ce0afcfa5a53760b680e9f73d06c245cc9489cfbc1ba01",
+      "image": "/assets/male_reproductive_illustration.png",
       "conditions": ["Prostatitis", "Sexual weakness", "Low sperm count"],
       "key_benefits": [
         "Improved prostate health",
@@ -142,8 +145,9 @@
     },
     {
       "category": "Genitourinary System",
-      "image": "https://img.freepik.com/free-photo/hand-holding-uterus-ovary-model_23-2149351688.jpg?t=st=1768231544~exp=1768235144~hmac=d29f906daae9580661f01b6e69f4bce78af769512940323e86ac787be4428d09",
+      "image": "/assets/kidney_illustration.png",
       "conditions": [
+        "Chronic Kidney Disease (CKD) & Creatinine Management",
         "Urinary tract infections",
         "Bedwetting",
         "Kidney stones",
@@ -154,14 +158,14 @@
         "Reduced urinary frequency and urgency",
         "Fewer UTIs and infections",
         "Improved bladder control",
-        "Support for kidney health",
+        "Support for kidney function & lowering creatinine levels",
         "Better sleep without interruptions"
       ],
       "description": "Effective solutions for urinary and kidney health concerns. Our treatments help strengthen urinary system function, reduce infections, and improve bladder control, providing relief from uncomfortable symptoms and preventing recurrence."
     },
     {
       "category": "Nervous System & Mental Health",
-      "image": "https://img.freepik.com/free-photo/representation-collective-mind-process-concept-digital-art-style_23-2151657807.jpg?t=st=1768231599~exp=1768235199~hmac=440bafd92ae5d48a7c6a12297f841528a8d4ef4a0b3fb12db7655f0a9a04b0cc",
+      "image": "/assets/nervous_system_illustration.png",
       "conditions": [
         "Depression",
         "Migraine and chronic headaches",
@@ -180,7 +184,7 @@
       "description": "Holistic care for mental wellness and neurological balance. Our approach addresses the root causes of anxiety, depression, insomnia, and stress-related conditions, helping restore emotional equilibrium and improve overall quality of life."
     },
     {
-      "category": "Children's Health (Pediatric)",
+      "category": "Child Health (Pediatric)",
       "image": "https://img.freepik.com/free-photo/portrait-female-pediatrician-work_23-2151686708.jpg?t=st=1768231734~exp=1768235334~hmac=eb1a5a25932395a6e39af8aae2a1cccbd394000678141fb21c878d6d852bdaeb",
       "conditions": [
         "Recurrent respiratory infections/Flu",
@@ -189,7 +193,11 @@
         "Teething problems",
         "Bedwetting",
         "Learning disorders",
-        "Behavioral issues (e.g., ADHD)"
+        "Behavioral issues (e.g., ADHD)",
+        "Autism Spectrum Disorder (ASD)",
+        "Worm disorders",
+        "Delayed milestones",
+        "Injuries and sprains"
       ],
       "key_benefits": [
         "Stronger immune system",
@@ -204,10 +212,12 @@
       "category": "ENT (Ear, Nose, Throat)",
       "image": "https://img.freepik.com/free-photo/anatomy-drawing-vintage-style_23-2151782870.jpg?t=st=1768231810~exp=1768235410~hmac=38adb8448b1ab76798952eba7998bf3d8ae2d498a7ee8bfa71c9dc7a8d8f3ba8",
       "conditions": [
+        "Sinusitis & Runny nose (due to DNS)",
         "Nasal polyps",
         "Chronic otitis",
         "Tinnitus",
         "Recurrent sore throat",
+        "Gum bleeds & Dental issues",
         "Allergies"
       ],
       "key_benefits": [
@@ -220,12 +230,31 @@
       "description": "Specialized care for chronic ENT conditions that provides lasting relief from recurrent infections, inflammation, and allergic reactions. Our treatments help restore proper function to the ear, nose, and throat while reducing dependency on antibiotics and other medications."
     },
     {
+      "category": "Eye & Vision Health",
+      "image": "/assets/eye_illustration.png",
+      "conditions": [
+        "Conjunctivitis (Pink Eye)",
+        "Styes and Chalazion",
+        "Dry Eye Syndrome",
+        "Computer Vision Syndrome",
+        "Early stage Cataract (supportive care)"
+      ],
+      "key_benefits": [
+        "Reduced eye strain and fatigue",
+        "Relief from dryness and irritation",
+        "Faster healing of eye infections",
+        "Supportive care for degenerative eye conditions",
+        "Improved overall ocular health"
+      ],
+      "description": "Natural, gentle care for common and chronic eye conditions. Our treatments help soothe irritation, speed up recovery from infections, and provide supportive care for degenerative issues like cataracts."
+    },
+    {
       "category": "Allergic Disorders",
       "image": "https://img.freepik.com/free-vector/person-with-cold_23-2148505009.jpg?t=st=1768231909~exp=1768235509~hmac=c028f60389e295b2b23a42b06adae61a2b9ffea1bb0a082561ebdca75b738f9b",
       "conditions": [
         "Food allergies",
         "Skin allergies",
-        "Respiratory allergies (including asthma)"
+        "Dust allergy & Respiratory allergies (including asthma)"
       ],
       "key_benefits": [
         "Reduced allergic sensitivity",
@@ -238,7 +267,7 @@
     },
     {
       "category": "Autoimmune & Chronic Conditions",
-      "image": "https://img.freepik.com/free-photo/healthcare-concept-clinic_23-2151117898.jpg?t=st=1768232024~exp=1768235624~hmac=f4cd299d443ccf346ed5f23599f06ef84274df8635755a1b17bb67ecb249cf2e",
+      "image": "https://images.unsplash.com/photo-1511174511562-5f7f18b874f8?q=80&w=2370&auto=format&fit=crop",
       "conditions": [
         "Rheumatoid arthritis",
         "Lupus (supportive)",
@@ -261,6 +290,7 @@
       "conditions": [
         "Hypertension (supportive)",
         "High cholesterol (supportive)",
+        "Neuropathy & nerve support (reducing multivitamin dependency)",
         "Geriatric disorders: memory support, osteoarthritis, incontinence",
         "Chronic joint pains",
         "Sleep issues",
@@ -276,7 +306,7 @@
       "description": "Comprehensive care for age-related and lifestyle conditions that supports healthy aging and improves quality of life. Our treatments address multiple concerns simultaneously, from joint health and mobility to cardiovascular support and cognitive function."
     },
     {
-      "category": "Obstinate, Incurable, or Supportive Conditions",
+      "category": "Obstinate, Incurable, or Supportive conditions",
       "image": "https://img.freepik.com/free-photo/women-greeting-new-normal-office-touching-bumping-elbows-keeping-social-distancing-as-safety-prevention-wearing-face-mask-global-pandemic-with-covid19_482257-16359.jpg?t=st=1768232145~exp=1768235745~hmac=26e1d95617e7f56d75424966c4ab134efbd6cb3f119fd07512698990e177f61e",
       "conditions": [
         "Cancer (Palliative care for symptom relief)",
@@ -287,7 +317,7 @@
         "Improved quality of life",
         "Better pain management",
         "Enhanced emotional wellbeing",
-        "Supportive care alongside conventional treatments"
+        "Palliative care alongside conventional treatments"
       ],
       "description": "Compassionate palliative and supportive care for serious health challenges. Our approach focuses on symptom management, reducing side effects of conventional treatments, and improving overall quality of life during difficult health journeys."
     }

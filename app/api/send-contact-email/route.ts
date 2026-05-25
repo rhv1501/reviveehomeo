@@ -31,7 +31,7 @@ export async function POST(request: Request) {
     const { data, error } = await resend.emails.send({
       from: "Contact Form <noreply@revivehomeoclinic.com>",
       to: "dr.nritiya@gmail.com",
-      subject: `New Contact Form Submission: ${formData.subject || formData.consultationType || "General Inquiry"}`,
+      subject: `New Contact Form Submission: ${formData.subject || formData.consultationType || "General Enquiry"}`,
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden;">
           <div style="background: linear-gradient(to right, #10b981, #3b82f6); padding: 24px; color: white;">
@@ -43,7 +43,7 @@ export async function POST(request: Request) {
             <p><strong>Phone:</strong> ${formData.phone || 'N/A'}</p>
             <p><strong>Age:</strong> ${formData.age || 'N/A'}</p>
             <p><strong>Gender:</strong> ${formData.gender || 'N/A'}</p>
-            <p><strong>Subject:</strong> ${formData.subject || formData.consultationType || 'General Inquiry'}</p>
+            <p><strong>Subject:</strong> ${formData.subject || formData.consultationType || 'General Enquiry'}</p>
             ${formData.consultationType ? `<p><strong>Consultation Type:</strong> ${formData.consultationType}</p>` : ''}
             ${formData.preferredDate ? `<p><strong>Preferred Date:</strong> ${formData.preferredDate}</p>` : ''}
             ${formData.preferredTime ? `<p><strong>Preferred Time:</strong> ${formData.preferredTime}</p>` : ''}

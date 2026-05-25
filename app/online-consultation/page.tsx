@@ -173,7 +173,7 @@ const OnlineConsultationPage = () => {
             <div>
               <h2 className="section-kicker mb-4">The Journey</h2>
               <h3 className="section-heading mb-12">
-                From First Inquiry to <br />
+                From First Enquiry to <br />
                 Curated Healing.
               </h3>
 

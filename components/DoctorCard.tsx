@@ -36,12 +36,11 @@ const DoctorCard: React.FC<DoctorCardProps> = ({
                 <div className="absolute bottom-0 left-0 w-48 h-48 bg-terracotta-50 rounded-full -ml-20 -mb-20 blur-3xl opacity-50" />
                 
                 <div className="relative z-10 w-full max-w-sm">
-                   <div className="relative aspect-[4/5] bg-white rounded-[3rem] p-4 shadow-xl transform group-hover:rotate-1 transition-transform duration-700">
+                   <div className="relative bg-white rounded-[3rem] p-4 shadow-xl transform group-hover:rotate-1 transition-transform duration-700 flex items-center justify-center">
                       <Image
                         src={photoSrc || Photo}
                         alt={name}
-                        fill
-                        className="object-cover rounded-[2rem] p-2"
+                        className="w-full h-auto object-contain rounded-[2rem] p-2"
                         priority
                       />
                    </div>

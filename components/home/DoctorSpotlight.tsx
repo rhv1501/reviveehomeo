@@ -12,13 +12,12 @@ const DoctorSpotlight: React.FC = () => {
         <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
 
           {/* Doctor Portrait */}
-          <div className="relative w-full aspect-[3/4] max-w-sm mx-auto md:mx-0 rounded-lg overflow-hidden border border-slate-200 shadow-sm bg-slate-100">
+          <div className="relative w-full max-w-sm mx-auto md:mx-0 rounded-lg overflow-hidden border border-slate-200 shadow-sm bg-slate-100 flex items-center justify-center">
             <Image
               src={doctorPortrait}
               alt="Dr. Nritiya Dave, Chief Homeopath, Revive Homeo Clinic"
-              fill
               sizes="(max-width: 768px) 80vw, 40vw"
-              className="object-cover object-top"
+              className="w-full h-auto object-contain"
             />
           </div>
 
