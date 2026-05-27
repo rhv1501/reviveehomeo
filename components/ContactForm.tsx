@@ -2,6 +2,10 @@
 
 import React, { useState, useEffect, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
+import {
+  buildNormalEnquirySubmission,
+  submitLeadToAppsScript,
+} from "../utils/appsScriptSubmission";
 
 const ContactFormInner = () => {
   const searchParams = useSearchParams();
@@ -42,26 +46,26 @@ const ContactFormInner = () => {
     setSubmitStatus({ type: null, message: "" });
 
     try {
-      const response = await fetch("/api/send-contact-email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
+      const record = buildNormalEnquirySubmission({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        age: formData.age,
+        gender: formData.gender,
+        subject: formData.subject || "General Enquiry",
+        message: formData.message,
+        pagePath:
+          typeof window !== "undefined" ? window.location.pathname : "/contact",
       });
 
-      if (!response.ok) throw new Error("Failed");
+      await submitLeadToAppsScript(record);
 
-      // Set submission flag for Thank You page
-      if (typeof window !== "undefined") {
-        sessionStorage.setItem("formSubmitted", "true");
-      }
-
-      router.push("/thank-you");
+      router.push("/thank-you/contact");
     } catch {
       setSubmitStatus({
         type: "error",
-        message: "Connection error. Please try again or call us directly.",
+        message:
+          "We could not send your enquiry right now. Please try again or call us directly.",
       });
     } finally {
       setIsSubmitting(false);
@@ -105,6 +109,7 @@ const ContactFormInner = () => {
               value={formData.name}
               onChange={handleChange}
               required
+              autoComplete="name"
               className="w-full px-6 py-4 rounded-2xl bg-cream-50 border border-sage-200 focus:border-terracotta-400 focus:ring-0 transition-all text-sage-900"
               placeholder="e.g. John Doe"
             />
@@ -118,6 +123,7 @@ const ContactFormInner = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
+              autoComplete="email"
               className="w-full px-6 py-4 rounded-2xl bg-cream-50 border border-sage-200 focus:border-terracotta-400 focus:ring-0 transition-all text-sage-900"
               placeholder="e.g. john@example.com"
             />
@@ -135,6 +141,8 @@ const ContactFormInner = () => {
               value={formData.phone}
               onChange={handleChange}
               required
+              autoComplete="tel"
+              inputMode="tel"
               className="w-full px-6 py-4 rounded-2xl bg-cream-50 border border-sage-200 focus:border-terracotta-400 focus:ring-0 transition-all text-sage-900"
               placeholder="+91..."
             />
@@ -149,6 +157,7 @@ const ContactFormInner = () => {
               value={formData.age}
               onChange={handleChange}
               required
+              inputMode="numeric"
               className="w-full px-6 py-4 rounded-2xl bg-cream-50 border border-sage-200 focus:border-terracotta-400 focus:ring-0 transition-all text-sage-900"
               placeholder="How old are you?"
             />

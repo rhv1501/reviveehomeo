@@ -2,6 +2,10 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import {
+  buildOnlineConsultationSubmission,
+  submitLeadToAppsScript,
+} from "../utils/appsScriptSubmission";
 
 const consultationOptions = [
   "Initial Online Consultation",
@@ -24,7 +28,7 @@ const OnlineConsultationForm: React.FC = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    phone: "",
+    mobile: "",
     age: "",
     natureOfProblem: "",
     preferredDate: "",
@@ -56,25 +60,25 @@ const OnlineConsultationForm: React.FC = () => {
     setSubmitStatus({ type: null, message: "" });
 
     try {
-      const response = await fetch("/api/send-contact-email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          ...formData,
-          subject: "Online Consultation",
-        }),
+      const record = buildOnlineConsultationSubmission({
+        name: formData.name,
+        email: formData.email,
+        mobile: formData.mobile,
+        age: formData.age,
+        natureOfProblem: formData.natureOfProblem,
+        preferredDate: formData.preferredDate,
+        preferredTime: formData.preferredTime,
+        mode: formData.mode,
+        message: formData.message,
+        pagePath:
+          typeof window !== "undefined"
+            ? window.location.pathname
+            : "/online-consultation",
       });
 
-      if (!response.ok) throw new Error("Failed");
+      await submitLeadToAppsScript(record);
 
-      // Set submission flag for Thank You page
-      if (typeof window !== "undefined") {
-        sessionStorage.setItem("formSubmitted", "true");
-      }
-
-      router.push("/thank-you");
+      router.push("/thank-you/online");
     } catch {
       setSubmitStatus({
         type: "error",
@@ -115,19 +119,23 @@ const OnlineConsultationForm: React.FC = () => {
               value={formData.name}
               onChange={handleChange}
               required
+              autoComplete="name"
               placeholder="How shall we address you?"
               className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sage-900 outline-none transition-all duration-300 focus:border-sage-500 focus:bg-white focus:ring-2 focus:ring-sage-500/20"
             />
           </div>
           <div className="space-y-2">
             <label className="ml-1 text-xs font-bold uppercase tracking-widest text-slate-700">
-              Phone Number *
+              Mobile Number *
             </label>
             <input
-              name="phone"
-              value={formData.phone}
+              type="tel"
+              name="mobile"
+              value={formData.mobile}
               onChange={handleChange}
               required
+              autoComplete="tel"
+              inputMode="tel"
               placeholder="+91 Your mobile number"
               className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sage-900 outline-none transition-all duration-300 focus:border-sage-500 focus:bg-white focus:ring-2 focus:ring-sage-500/20"
             />
@@ -145,6 +153,7 @@ const OnlineConsultationForm: React.FC = () => {
               value={formData.email}
               onChange={handleChange}
               required
+              autoComplete="email"
               placeholder="For appointment details"
               className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sage-900 outline-none transition-all duration-300 focus:border-sage-500 focus:bg-white focus:ring-2 focus:ring-sage-500/20"
             />
@@ -158,6 +167,7 @@ const OnlineConsultationForm: React.FC = () => {
               name="age"
               value={formData.age}
               onChange={handleChange}
+              inputMode="numeric"
               placeholder="Patient's age"
               className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sage-900 outline-none transition-all duration-300 focus:border-sage-500 focus:bg-white focus:ring-2 focus:ring-sage-500/20"
             />
@@ -255,9 +265,7 @@ const OnlineConsultationForm: React.FC = () => {
             >
               {submitStatus.type === "success" ? "✓" : "!"}
             </span>
-            <p className="text-sm font-semibold">
-              {submitStatus.message}
-            </p>
+            <p className="text-sm font-semibold">{submitStatus.message}</p>
           </div>
         )}
 

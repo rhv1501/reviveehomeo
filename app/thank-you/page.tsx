@@ -1,104 +1,100 @@
-"use client";
-
-import React, { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
-import Image from "next/image";
-import clinicInterior from "../../assets/clinic_interior.png";
 
 const ThankYouPage = () => {
-  const router = useRouter();
-  const [authorized, setAuthorized] = useState(false);
-
-  const [showColor, setShowColor] = useState(false);
-
-  useEffect(() => {
-    // Check if form was submitted
-    const isSubmitted = sessionStorage.getItem("formSubmitted");
-    
-    if (!isSubmitted) {
-      router.replace("/");
-    } else {
-      setAuthorized(true);
-      // Logic for automatic color reveal
-      const timer = setTimeout(() => setShowColor(true), 1200);
-      return () => clearTimeout(timer);
-    }
-  }, [router]);
-
-  if (!authorized) {
-    return (
-      <div className="min-h-screen bg-sage-50 flex items-center justify-center">
-        <div className="h-12 w-12 border-4 border-sage-200 border-t-sage-600 rounded-full animate-spin"></div>
-      </div>
-    );
-  }
-
   return (
-    <div className="min-h-screen pt-20 bg-cream-50/30 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className={`relative group ${showColor ? 'grayscale-0' : 'grayscale'} transition-all duration-[3000ms] ease-in-out mb-12`}>
-          <div className="relative h-[250px] md:h-[400px] rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white transform hover:scale-[1.01] transition-transform">
-            <Image
-              src={clinicInterior}
-              alt="Revivee Homeo Clinic"
-              fill
-              className="object-cover"
-              priority
-            />
-            <div className="absolute inset-0 bg-linear-to-t from-sage-900/80 via-sage-900/20 to-transparent" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center space-y-4">
-                <div className="h-20 w-20 bg-white/20 backdrop-blur-md rounded-full border border-white/30 flex items-center justify-center mx-auto animate-float">
-                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" />
-                  </svg>
+    <div className="min-h-screen bg-cream-50/40 pt-28 pb-16">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="rounded-[3rem] border border-sage-100 bg-white shadow-2xl overflow-hidden">
+          <div className="grid lg:grid-cols-[0.95fr_1.05fr]">
+            <div className="bg-sage-900 px-8 py-10 sm:px-10 sm:py-12 text-white flex flex-col justify-between gap-10">
+              <div className="space-y-5">
+                <p className="text-xs font-bold uppercase tracking-[0.3em] text-sage-300">
+                  Thank You
+                </p>
+                <h1 className="text-4xl sm:text-5xl font-playfair font-bold leading-tight">
+                  Your enquiry has been received.
+                </h1>
+                <p className="text-sage-200 leading-relaxed max-w-md">
+                  We will review your details and get back to you with the next
+                  step. If you need immediate help, call the clinic directly.
+                </p>
+              </div>
+
+              <div className="rounded-[2rem] border border-white/10 bg-white/5 p-6 backdrop-blur">
+                <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-sage-300 mb-3">
+                  Choose your confirmation page
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <Link
+                    href="/thank-you/contact"
+                    className="rounded-full bg-white px-5 py-3 text-sm font-bold text-sage-900 text-center"
+                  >
+                    Normal Enquiry
+                  </Link>
+                  <Link
+                    href="/thank-you/online"
+                    className="rounded-full border border-white/20 px-5 py-3 text-sm font-bold text-white text-center"
+                  >
+                    Online Consultation
+                  </Link>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
 
-        <div className="max-w-3xl mx-auto text-center space-y-8 animate-slide-up">
-          <div className="space-y-4">
-            <h2 className="section-kicker">Submission Successful</h2>
-            <h1 className="text-4xl md:text-6xl font-playfair font-bold text-sage-900 leading-tight">
-              Healing <span className="italic text-terracotta-600">Begins</span> Here.
-            </h1>
-          </div>
-
-          <div className="p-8 rounded-[2.5rem] bg-white border border-sage-100 shadow-xl space-y-6">
-            <p className="text-lg text-sage-700 leading-relaxed">
-              Thank you for trusting <strong className="text-sage-900">Revivee Homeo Clinic</strong> with your health journey. 
-              We have received your details and our clinical coordinator is already reviewing your case history.
-            </p>
-            
-            <div className="h-px w-20 bg-sage-200 mx-auto" />
-            
-            <div className="grid sm:grid-cols-2 gap-6 text-left">
-              <div className="p-5 rounded-2xl bg-sage-50 border border-sage-100 italic text-sage-700 text-sm">
-                "Our coordinator will call you within 2-4 business hours to finalize your consultation time."
+            <div className="px-8 py-10 sm:px-10 sm:py-12 space-y-8">
+              <div className="space-y-3">
+                <h2 className="section-kicker">Need the next step now?</h2>
+                <h3 className="section-heading">Continue to the right page.</h3>
+                <p className="text-sage-700 leading-relaxed max-w-xl">
+                  Each form now routes to its own thank-you page so your lead is
+                  tracked cleanly in the correct sheet.
+                </p>
               </div>
-              <div className="p-5 rounded-2xl bg-terracotta-50 border border-terracotta-100 italic text-terracotta-800 text-sm">
-                "For urgent inquiries, please call us directly at +91 967 718 3197"
+
+              <div className="grid sm:grid-cols-2 gap-5">
+                <div className="rounded-[2rem] border border-sage-100 bg-sage-50 p-6 space-y-3">
+                  <p className="text-xs font-bold uppercase tracking-[0.24em] text-sage-600">
+                    Normal Enquiry
+                  </p>
+                  <p className="text-sm text-sage-700 leading-relaxed">
+                    Best for clinic visits, follow-ups, and general questions.
+                  </p>
+                  <Link
+                    href="/contact"
+                    className="text-sm font-bold text-sage-900 underline underline-offset-4"
+                  >
+                    Visit normal contact form
+                  </Link>
+                </div>
+
+                <div className="rounded-[2rem] border border-terracotta-100 bg-terracotta-50 p-6 space-y-3">
+                  <p className="text-xs font-bold uppercase tracking-[0.24em] text-terracotta-700">
+                    Online Consultation
+                  </p>
+                  <p className="text-sm text-terracotta-900/80 leading-relaxed">
+                    Best for video or phone consultation requests.
+                  </p>
+                  <Link
+                    href="/online-consultation"
+                    className="text-sm font-bold text-terracotta-700 underline underline-offset-4"
+                  >
+                    Visit online consultation form
+                  </Link>
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4 pt-2">
+                <Link href="/" className="btn-premium px-8 py-4 text-center">
+                  Return home
+                </Link>
+                <a
+                  href="tel:+919677183197"
+                  className="btn-outline-premium px-8 py-4 text-center"
+                >
+                  Call clinic now
+                </a>
               </div>
             </div>
-          </div>
-
-          <div className="pt-8">
-            <Link 
-              href="/" 
-              className="btn-premium px-10 py-5"
-              onClick={() => sessionStorage.removeItem("formSubmitted")}
-            >
-              Return to Sanctuary
-            </Link>
-          </div>
-
-          <div className="flex justify-center gap-2 pt-12">
-            {[1, 2, 3].map(i => (
-              <div key={i} className="h-1.5 w-1.5 rounded-full bg-sage-200" />
-            ))}
           </div>
         </div>
       </div>
