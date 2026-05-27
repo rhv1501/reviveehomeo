@@ -26,8 +26,8 @@ export default function ContactThankYouPage() {
                   </span>
                 </h1>
                 <p className="text-lg text-slate-600 leading-relaxed max-w-xl">
-                  We&apos;ve received your clinic details and your submission is now
-                  in the normal enquiries sheet. Our team will review it and
+                  We&apos;ve received your clinic details and your submission is
+                  now in the normal enquiries sheet. Our team will review it and
                   get back to you with the next best step.
                 </p>
               </div>
@@ -54,10 +54,16 @@ export default function ContactThankYouPage() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                <Link href="/contact" className="btn-premium px-8 py-4 text-center">
+                <Link
+                  href="/contact"
+                  className="btn-premium px-8 py-4 text-center"
+                >
                   Submit another enquiry
                 </Link>
-                <Link href="/" className="btn-outline-premium px-8 py-4 text-center">
+                <Link
+                  href="/"
+                  className="btn-outline-premium px-8 py-4 text-center"
+                >
                   Back to home
                 </Link>
               </div>

@@ -52,10 +52,16 @@ export default function OnlineThankYouPage() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                <Link href="/online-consultation" className="btn-premium px-8 py-4 text-center">
+                <Link
+                  href="/online-consultation"
+                  className="btn-premium px-8 py-4 text-center"
+                >
                   Submit another request
                 </Link>
-                <a href="tel:+919677183197" className="btn-outline-premium px-8 py-4 text-center">
+                <a
+                  href="tel:+919677183197"
+                  className="btn-outline-premium px-8 py-4 text-center"
+                >
                   Call clinic now
                 </a>
               </div>
