@@ -16,19 +16,10 @@ const Footer: React.FC = () => {
     { name: "Get in Touch", path: "/contact" },
   ];
 
-  const focusAreas = [
-    { name: "Psoriasis & Skin Care", path: "/treatments" },
-    { name: "PCOS & Women's Health", path: "/treatments" },
-    { name: "Chronic Pain Management", path: "/treatments" },
-    { name: "Pediatric Homeopathy", path: "/treatments" },
-    { name: "Allergic Rhinitis", path: "/treatments" },
-    { name: "Thyroid Disorders", path: "/treatments" },
-  ];
-
   return (
     <footer className="bg-sage-900 text-white pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-16 relative z-10">
           <div className="space-y-6">
             <Link href="/" className="flex items-center space-x-3">
               <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center p-1 shadow-lg border border-sage-100">
@@ -113,24 +104,6 @@ const Footer: React.FC = () => {
                     className="text-sage-200/90 hover:text-cream-50 transition-colors text-sm font-medium"
                   >
                     {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-playfair font-bold text-lg mb-6 text-white tracking-wide">
-              Our Expertise
-            </h4>
-            <ul className="space-y-4">
-              {focusAreas.map((area) => (
-                <li key={area.name}>
-                  <Link
-                    href={area.path}
-                    className="text-sage-200/90 hover:text-cream-50 transition-colors text-sm font-medium"
-                  >
-                    {area.name}
                   </Link>
                 </li>
               ))}
