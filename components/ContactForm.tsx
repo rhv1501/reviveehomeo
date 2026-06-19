@@ -40,6 +40,13 @@ const ContactFormInner = () => {
     message: "",
   });
 
+  const isFormValid =
+    formData.name.trim().length >= 2 &&
+    formData.phone.replace(/\D/g, '').length >= 10 &&
+    formData.age.trim().length > 0 &&
+    formData.message.trim().length >= 5 &&
+    (!formData.email || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email));
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -189,8 +196,8 @@ const ContactFormInner = () => {
 
         <button
           type="submit"
-          disabled={isSubmitting}
-          className="w-full btn-premium py-4 sm:py-5 text-sm sm:text-base font-bold tracking-[0.16em] uppercase disabled:opacity-50"
+          disabled={isSubmitting || !isFormValid}
+          className="w-full btn-premium py-4 sm:py-5 text-sm sm:text-base font-bold tracking-[0.16em] uppercase disabled:opacity-50 disabled:cursor-not-allowed transition-opacity"
         >
           {isSubmitting
             ? "Processing Enquiry..."

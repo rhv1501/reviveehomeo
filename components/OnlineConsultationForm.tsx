@@ -46,6 +46,13 @@ const OnlineConsultationForm: React.FC = () => {
     message: "",
   });
 
+  const isFormValid =
+    formData.name.trim().length >= 2 &&
+    formData.mobile.replace(/\D/g, '').length >= 10 &&
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email) &&
+    formData.natureOfProblem.trim().length > 0 &&
+    formData.message.trim().length >= 5;
+
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
@@ -271,8 +278,8 @@ const OnlineConsultationForm: React.FC = () => {
 
         <button
           type="submit"
-          disabled={isSubmitting}
-          className="btn-premium w-full py-4 text-sm font-bold uppercase tracking-widest disabled:opacity-60"
+          disabled={isSubmitting || !isFormValid}
+          className="btn-premium w-full py-4 text-sm font-bold uppercase tracking-widest disabled:opacity-60 disabled:cursor-not-allowed transition-opacity"
         >
           {isSubmitting
             ? "Processing Request..."

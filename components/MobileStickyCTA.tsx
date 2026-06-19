@@ -6,24 +6,15 @@ import contactData from "../data/contact.json";
 
 const MobileStickyCTA: React.FC = () => {
   const whatsappUrl = `https://wa.me/${contactData.clinic_info.phone.primary.replace(/\D/g, "")}`;
-  const telUrl = `tel:${contactData.clinic_info.phone.primary}`;
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-slate-200 p-3 sm:hidden shadow-[0_-4px_15px_rgba(0,0,0,0.05)]">
-      <div className="grid grid-cols-3 gap-2">
-        <a
-          href={telUrl}
-          className="flex flex-col items-center justify-center gap-1 py-2 text-sage-800 hover:text-sage-900 transition-colors bg-sage-50 rounded-lg"
-        >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-          </svg>
-          <span className="text-[10px] font-semibold">Call Now</span>
-        </a>
+      <div className="grid grid-cols-2 gap-2">
         <a
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
+          id="contactclick"
           className="flex flex-col items-center justify-center gap-1 py-2 text-[#1FA95A] bg-[#1FA95A]/10 rounded-lg"
         >
           <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">

@@ -169,6 +169,7 @@ const Footer: React.FC = () => {
             </a>
             <a
               href={`tel:${contactData.clinic_info.phone.primary.replace(/\s+/g, "")}`}
+              id="contactclick"
               className="hover:text-sage-200"
             >
               Call Clinic

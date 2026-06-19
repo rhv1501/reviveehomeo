@@ -150,6 +150,7 @@ const ContactPage = () => {
                 </p>
                 <a
                   href={`tel:${contactData.clinic_info.phone.primary}`}
+                  id="contactclick"
                   className="text-2xl font-bold text-sage-900 uppercase"
                 >
                   {contactData.clinic_info.phone.primary}

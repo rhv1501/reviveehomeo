@@ -139,6 +139,23 @@ export default function Home() {
 
       <BookingGuide />
 
+      {/* Our Healing Philosophy Section - Typographic & Minimal */}
+      <section className="py-32 bg-sage-50 border-y border-sage-100">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-sage-500 mb-8">
+            The Revivee Philosophy
+          </p>
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-playfair text-sage-900 leading-[1.2] tracking-tight mb-12">
+            We don't just treat the disease. <br className="hidden md:block"/>
+            <span className="italic text-terracotta-700">We treat the individual.</span>
+          </h2>
+          <div className="w-px h-16 bg-sage-300 mx-auto mb-12"></div>
+          <p className="text-lg md:text-xl text-sage-700 leading-relaxed max-w-2xl mx-auto font-medium">
+            Symptoms are your body's way of communicating an imbalance. By understanding your unique physical, mental, and emotional constitution, our classical homeopathic approach stimulates your inherent vital force for true, lasting healing.
+          </p>
+        </div>
+      </section>
+
       {/* The Revive Edge & Leadership - Spacious Grid */}
       <section className="site-section bg-white border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
