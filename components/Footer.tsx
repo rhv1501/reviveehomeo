@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import contactData from "../data/contact.json";
+import CallModalCTA from "./CallModalCTA";
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -167,13 +168,9 @@ const Footer: React.FC = () => {
             >
               Email Us
             </a>
-            <a
-              href={`tel:${contactData.clinic_info.phone.primary.replace(/\s+/g, "")}`}
-              id="contactclick"
-              className="hover:text-sage-200"
-            >
+            <CallModalCTA buttonClassName="hover:text-sage-200">
               Call Clinic
-            </a>
+            </CallModalCTA>
           </div>
         </div>
       </div>

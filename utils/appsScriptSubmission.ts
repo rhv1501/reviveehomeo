@@ -1,4 +1,4 @@
-export type LeadSheetName = "Normal Enquiries" | "Online Consultations";
+export type LeadSheetName = "Normal Enquiries" | "Online Consultations" | "Quick Calls";
 
 type SubmissionContext = {
   sheetName: LeadSheetName;
@@ -109,6 +109,23 @@ export const buildOnlineConsultationSubmission = (params: {
       preferredTime: params.preferredTime,
       mode: params.mode,
       message: params.message,
+    },
+  );
+
+export const buildQuickCallSubmission = (params: {
+  name: string;
+  phone: string;
+  pagePath: string;
+}) =>
+  buildSubmissionRecord(
+    {
+      sheetName: "Quick Calls",
+      formType: "Quick Call Request",
+      pagePath: params.pagePath,
+    },
+    {
+      name: params.name,
+      phone: params.phone,
     },
   );
 
