@@ -178,7 +178,6 @@ const ContactFormInner = () => {
                       value={formData.name}
                       onChange={handleChange}
                       autoComplete="name"
-                      autoFocus
                       className="w-full bg-slate-50 border border-slate-200 rounded px-4 py-3.5 pr-10 text-sm text-slate-900 focus:bg-white focus:border-sage-800 focus:ring-1 focus:ring-sage-800 transition-all outline-none"
                       placeholder="e.g. John Doe"
                     />
@@ -239,7 +238,6 @@ const ContactFormInner = () => {
                       onChange={handleChange}
                       autoComplete="tel"
                       inputMode="tel"
-                      autoFocus
                       className="w-full bg-slate-50 border border-slate-200 rounded px-4 py-3.5 pr-10 text-sm text-slate-900 focus:bg-white focus:border-sage-800 focus:ring-1 focus:ring-sage-800 transition-all outline-none"
                       placeholder="+91"
                     />
@@ -312,7 +310,6 @@ const ContactFormInner = () => {
                   value={formData.message}
                   onChange={handleChange}
                   rows={4}
-                  autoFocus
                   className="w-full bg-slate-50 border border-slate-200 rounded px-4 py-3.5 text-sm text-slate-900 focus:bg-white focus:border-sage-800 focus:ring-1 focus:ring-sage-800 transition-all outline-none resize-none leading-relaxed"
                   placeholder="Please specify duration of symptoms and any past treatments..."
                 ></textarea>
