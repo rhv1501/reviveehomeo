@@ -11,13 +11,13 @@ import womensFocus from "../assets/womens_focus.png";
 import painFocus from "../assets/pain_focus.png";
 import childFocus from "../assets/child_focus.png";
 import DoctorSpotlight from "../components/home/DoctorSpotlight";
+import ContactForm from "../components/ContactForm";
+import BookingGuide from "../components/home/BookingGuide";
 import {
   PAGE_KEYWORDS,
   BASE_KEYWORDS,
   generateKeywords,
 } from "../utils/seoUtils";
-
-import BookingGuide from "../components/home/BookingGuide";
 
 const FAQSection = dynamic(() => import("../components/home/FAQSection"), {
   ssr: true,
@@ -75,6 +75,30 @@ export default function Home() {
     <div className="min-h-screen bg-white">
       <HomeHero />
       <DoctorSpotlight />
+
+      {/* Primary Contact Form Section */}
+      <section className="site-section bg-sage-50 border-b border-slate-100 relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-terracotta-100/30 rounded-full blur-[100px] -mr-32 -mt-32" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-sage-200/40 rounded-full blur-[80px] -ml-24 -mb-24" />
+        </div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-12">
+            <span className="section-kicker">Start Your Journey</span>
+            <h2 className="section-heading mb-4">
+              Book your primary consultation
+            </h2>
+            <p className="text-sage-700 font-medium max-w-2xl mx-auto">
+              Share your details in the form below and our team will get in touch to schedule your appointment with Dr. Nritiya Dave.
+            </p>
+          </div>
+          
+          <div className="relative">
+            <div className="absolute -inset-4 bg-white/50 blur-2xl rounded-[4rem] -z-10 " id ="contact"/>
+            <ContactForm />
+          </div>
+        </div>
+      </section>
 
       {/* Conditions Grid Section - Clean, Image-Top Cards */}
       <section className="site-section bg-white border-b border-slate-100">

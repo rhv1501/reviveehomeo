@@ -23,7 +23,7 @@ const MobileStickyCTA: React.FC = () => {
           <span className="text-[10px] font-semibold text-[#1FA95A] pointer-events-none">WhatsApp</span>
         </a>
         <Link
-          href="/online-consultation"
+          href="#contact"
           className="col-span-1 flex flex-col items-center justify-center gap-1 py-2 text-white bg-sage-800 rounded-lg shadow-sm"
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

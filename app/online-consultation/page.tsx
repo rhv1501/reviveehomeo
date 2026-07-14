@@ -88,10 +88,10 @@ const OnlineConsultationPage = () => {
                   Book Virtual Slot
                 </Link>
                 <Link
-                  href="/about"
+                  href="/contact"
                   className="btn-outline-premium px-8 py-4 text-center"
                 >
-                  The Revive Way
+                  On Clinic Consultation
                 </Link>
               </div>
 

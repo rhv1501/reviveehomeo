@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Script from "next/script";
 import ScrollToTop from "../components/ScrollToTop";
 import FloatingActionButton from "../components/FloatingActionButton";
 import MobileStickyCTA from "../components/MobileStickyCTA";
@@ -128,7 +129,9 @@ export default function RootLayout({
         <link rel="preconnect" href="https://images.unsplash.com" />
         <link rel="preconnect" href="https://img.freepik.com" />
         {/* Google Tag Manager */}
-        <script
+        <Script
+          id="gtm-script"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -139,8 +142,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         />
         {/* End Google Tag Manager */}
         {/* Google tag (gtag.js) */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11127917834"></script>
-        <script
+        <Script 
+          src="https://www.googletagmanager.com/gtag/js?id=AW-11127917834"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="gtag-init"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
@@ -152,8 +160,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           }}
         />
         {/* Microsoft Clarity */}
-        <script
-          type="text/javascript"
+        <Script
+          id="clarity-script"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `(function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};

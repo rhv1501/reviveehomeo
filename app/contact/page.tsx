@@ -3,7 +3,8 @@
 import React, { Suspense } from "react";
 import Image from "next/image";
 import contactData from "../../data/contact.json";
-import ContactForm from "../../components/ContactForm";
+import dynamic from "next/dynamic";
+const ContactForm = dynamic(() => import("../../components/ContactForm"), { ssr: false });
 import clinicImg1 from "../../assets/clinic_interior.png";
 import clinicImg2 from "../../assets/minimalist_lifestyle.png";
 import clinicImg3 from "../../assets/online_hero.png";
