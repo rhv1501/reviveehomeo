@@ -104,10 +104,10 @@ export default async function TreatmentLandingPage({ params }: { params: Promise
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a href="#contact" className="btn-premium py-4 px-8 text-center bg-sage-900 text-white hover:bg-sage-800 transition-colors rounded-lg font-bold">
-                  Book a Consultation
+                  Book Consultation
                 </a>
                 <a href="#details" className="btn-outline-premium py-4 px-8 text-center bg-white border border-slate-200 hover:bg-slate-50 transition-colors rounded-lg font-bold text-sage-900">
-                  Explore Treatment
+                  View Treatments
                 </a>
               </div>
             </div>

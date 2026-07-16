@@ -36,7 +36,7 @@ const HomeHero: React.FC = () => {
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-3 pt-2">
             <Link
-              href="/online-consultation"
+              href="#contact"
               className="btn-premium py-4 text-center w-full sm:w-auto sm:px-10 text-base"
             >
               Book Consultation
