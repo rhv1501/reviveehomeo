@@ -7,7 +7,7 @@ import {
   submitLeadToAppsScript,
 } from "../utils/appsScriptSubmission";
 
-const ContactFormInner = () => {
+const ContactFormInner = ({ defaultInterest }: { defaultInterest?: string }) => {
   const searchParams = useSearchParams();
   const router = useRouter();
   
@@ -26,14 +26,14 @@ const ContactFormInner = () => {
   });
 
   useEffect(() => {
-    const interest = searchParams.get("interest");
+    const interest = searchParams.get("interest") || defaultInterest;
     if (interest) {
       setFormData((prev) => ({
         ...prev,
         message: `I am interested in exploring ${interest} treatment alternatives and would like to schedule a primary consultation session.`,
       }));
     }
-  }, [searchParams]);
+  }, [searchParams, defaultInterest]);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<{
@@ -390,14 +390,14 @@ const ContactFormInner = () => {
   );
 };
 
-const ContactForm = () => {
+const ContactForm = ({ defaultInterest }: { defaultInterest?: string }) => {
   return (
     <Suspense
       fallback={
         <div className="h-96 w-full animate-pulse bg-sage-50 rounded-[3rem]" />
       }
     >
-      <ContactFormInner />
+      <ContactFormInner defaultInterest={defaultInterest} />
     </Suspense>
   );
 };
