@@ -2,11 +2,16 @@
 
 import React, { useState } from "react";
 import contactData from "../data/contact.json";
-import { buildQuickCallSubmission, submitLeadToAppsScript } from "../utils/appsScriptSubmission";
+import {
+  buildQuickCallSubmission,
+  submitLeadToAppsScript,
+  trackCtaClick,
+} from "../utils/appsScriptSubmission";
 
 interface CallModalCTAProps {
   buttonText?: string;
   buttonClassName?: string;
+  trackLocation?: string;
   children?: React.ReactNode;
 }
 
@@ -16,6 +21,7 @@ const ENABLE_CALL_MODAL = false;
 const CallModalCTA: React.FC<CallModalCTAProps> = ({ 
   buttonText = "Call Now", 
   buttonClassName = "", 
+  trackLocation = "Call CTA",
   children 
 }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -49,7 +55,14 @@ const CallModalCTA: React.FC<CallModalCTAProps> = ({
 
   if (!ENABLE_CALL_MODAL) {
     return (
-      <a href={phoneLink} id="contactclick" className={buttonClassName}>
+      <a
+        href={phoneLink}
+        id="contactclick"
+        onClick={() =>
+          trackCtaClick({ buttonType: "Call", buttonLocation: trackLocation })
+        }
+        className={buttonClassName}
+      >
         {children || buttonText}
       </a>
     );

@@ -3,6 +3,7 @@
 import React, { Suspense } from "react";
 import Image from "next/image";
 import contactData from "../../data/contact.json";
+import CallModalCTA from "../../components/CallModalCTA";
 import dynamic from "next/dynamic";
 const ContactForm = dynamic(() => import("../../components/ContactForm"), { ssr: false });
 import clinicImg1 from "../../assets/clinic_interior.png";
@@ -149,13 +150,12 @@ const ContactPage = () => {
                 <p className="text-[10px] font-bold text-sage-600 uppercase tracking-widest">
                   Call Clinic Directly
                 </p>
-                <a
-                  href={`tel:${contactData.clinic_info.phone.primary}`}
-                  id="contactclick"
-                  className="text-2xl font-bold text-sage-900 uppercase"
+                <CallModalCTA
+                  trackLocation="Contact Page"
+                  buttonClassName="text-2xl font-bold text-sage-900 uppercase"
                 >
                   {contactData.clinic_info.phone.primary}
-                </a>
+                </CallModalCTA>
               </div>
             </div>
 

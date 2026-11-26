@@ -2,12 +2,14 @@
 
 import React from "react";
 import contactData from "../data/contact.json";
+import { trackCtaClick } from "../utils/appsScriptSubmission";
 
 const FloatingActionButton: React.FC = () => {
   const whatsappUrl = `https://wa.me/${contactData.clinic_info.phone.primary.replace(/\D/g, "")}`;
 
   const handleSocialClick = (e: React.MouseEvent) => {
     e.preventDefault();
+    trackCtaClick({ buttonType: "WhatsApp", buttonLocation: "Floating Button" });
     window.open(whatsappUrl, "_blank");
   };
 

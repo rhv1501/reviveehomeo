@@ -168,7 +168,7 @@ const Footer: React.FC = () => {
             >
               Email Us
             </a>
-            <CallModalCTA buttonClassName="hover:text-sage-200">
+            <CallModalCTA trackLocation="Footer" buttonClassName="hover:text-sage-200">
               Call Clinic
             </CallModalCTA>
           </div>

@@ -4,9 +4,10 @@ Use this script as the backend for the frontend submission flow.
 
 1. Open Google Apps Script and create a new project.
 2. Paste the contents of [Code.gs](Code.gs) into the default script file.
-3. Link the script to a Google Sheet that contains two tabs named:
+3. Link the script to a Google Sheet that contains three tabs named:
    - Normal Enquiries
    - Online Consultations
+   - CTA Clicks
 4. If the script is not bound to the sheet, set a script property named `SPREADSHEET_ID` to the target Google Sheet ID.
 5. Deploy as a Web App and allow access from anyone.
 6. Copy the deployed Web App URL into `NEXT_PUBLIC_GOOGLE_APPS_SCRIPT_URL`:
@@ -35,3 +36,10 @@ The frontend already sends these fields:
 - `preferredTime`
 - `mode`
 - `message`
+- `buttonType`
+- `buttonLocation`
+- `utm_source`
+- `utm_medium`
+- `utm_campaign`
+- `utm_term`
+- `utm_content`

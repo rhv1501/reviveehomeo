@@ -1,4 +1,10 @@
-export type LeadSheetName = "Normal Enquiries" | "Online Consultations" | "Quick Calls";
+import { getStoredUtmParams } from "./utmTracking";
+
+export type LeadSheetName =
+  | "Normal Enquiries"
+  | "Online Consultations"
+  | "Quick Calls"
+  | "CTA Clicks";
 
 type SubmissionContext = {
   sheetName: LeadSheetName;
@@ -40,6 +46,7 @@ export const buildSubmissionRecord = (
   fields: Record<string, string>,
 ) => {
   const now = new Date();
+  const utms = getStoredUtmParams();
 
   return {
     sheetName: context.sheetName,
@@ -48,6 +55,7 @@ export const buildSubmissionRecord = (
     submittedAt: formatTimestamp(now),
     submittedAtIso: now.toISOString(),
     timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || "local",
+    ...utms,
     ...Object.fromEntries(
       Object.entries(fields).filter(([, value]) => value.trim() !== ""),
     ),
@@ -148,4 +156,53 @@ export const submitLeadToAppsScript = async (
   });
 
   return response;
+};
+
+/**
+ * Fires a non-blocking click tracking event for WhatsApp/Call CTAs using
+ * sendBeacon (with keepalive fetch fallback) so navigation/dialer is never delayed.
+ */
+export const trackCtaClick = (params: {
+  buttonType: "WhatsApp" | "Call";
+  buttonLocation: string;
+  pagePath?: string;
+}) => {
+  if (!APPS_SCRIPT_URL || typeof window === "undefined") return;
+
+  const record = buildSubmissionRecord(
+    {
+      sheetName: "CTA Clicks",
+      formType: "CTA Click",
+      pagePath: params.pagePath || window.location.pathname,
+    },
+    {
+      buttonType: params.buttonType,
+      buttonLocation: params.buttonLocation,
+    },
+  );
+
+  const encoded = toFormBody(record).toString();
+
+  try {
+    if (typeof navigator !== "undefined" && typeof navigator.sendBeacon === "function") {
+      const blob = new Blob([encoded], {
+        type: "application/x-www-form-urlencoded;charset=UTF-8",
+      });
+      if (navigator.sendBeacon(APPS_SCRIPT_URL, blob)) {
+        return;
+      }
+    }
+
+    void fetch(APPS_SCRIPT_URL, {
+      method: "POST",
+      mode: "no-cors",
+      keepalive: true,
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+      },
+      body: encoded,
+    });
+  } catch {
+    // Never block or break user navigation on analytics failure
+  }
 };

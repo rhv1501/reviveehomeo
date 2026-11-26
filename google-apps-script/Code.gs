@@ -1,9 +1,18 @@
 const CONFIG = {
   normalSheetName: "Normal Enquiries",
   onlineSheetName: "Online Consultations",
+  ctaClicksSheetName: "CTA Clicks",
   timestampFormat: "yyyy-MM-dd HH:mm:ss",
   timezone: Session.getScriptTimeZone(),
 };
+
+const UTM_HEADERS = [
+  "UTM Source",
+  "UTM Medium",
+  "UTM Campaign",
+  "UTM Term",
+  "UTM Content",
+];
 
 const SHEET_SCHEMAS = {
   [CONFIG.normalSheetName]: [
@@ -18,6 +27,7 @@ const SHEET_SCHEMAS = {
     "Subject",
     "Message",
     "Page Path",
+    ...UTM_HEADERS,
   ],
   [CONFIG.onlineSheetName]: [
     "Timestamp",
@@ -33,6 +43,16 @@ const SHEET_SCHEMAS = {
     "Mode",
     "Message",
     "Page Path",
+    ...UTM_HEADERS,
+  ],
+  [CONFIG.ctaClicksSheetName]: [
+    "Timestamp",
+    "Submitted At (ISO)",
+    "Timezone",
+    "Button Type",
+    "Button Location",
+    "Page Path",
+    ...UTM_HEADERS,
   ],
 };
 
@@ -117,6 +137,10 @@ function resolveSheetName(payload) {
     payload.sheetName || payload.formType || "",
   ).toLowerCase();
 
+  if (incoming.includes("cta") || incoming.includes("click")) {
+    return CONFIG.ctaClicksSheetName;
+  }
+
   if (incoming.includes("online")) {
     return CONFIG.onlineSheetName;
   }
@@ -153,10 +177,33 @@ function getSpreadsheet() {
   );
 }
 
+function buildUtmFields(payload) {
+  return {
+    "UTM Source": payload.utm_source || "",
+    "UTM Medium": payload.utm_medium || "",
+    "UTM Campaign": payload.utm_campaign || "",
+    "UTM Term": payload.utm_term || "",
+    "UTM Content": payload.utm_content || "",
+  };
+}
+
 function buildRow(payload, sheetName) {
   const submittedAt = payload.submittedAt
     ? String(payload.submittedAt)
     : Utilities.formatDate(new Date(), CONFIG.timezone, CONFIG.timestampFormat);
+  const utmFields = buildUtmFields(payload);
+
+  if (sheetName === CONFIG.ctaClicksSheetName) {
+    return {
+      Timestamp: submittedAt,
+      "Submitted At (ISO)": payload.submittedAtIso || new Date().toISOString(),
+      Timezone: payload.timezone || CONFIG.timezone,
+      "Button Type": payload.buttonType || "",
+      "Button Location": payload.buttonLocation || "",
+      "Page Path": payload.pagePath || "",
+      ...utmFields,
+    };
+  }
 
   if (sheetName === CONFIG.onlineSheetName) {
     return {
@@ -173,6 +220,7 @@ function buildRow(payload, sheetName) {
       Mode: payload.mode || "",
       Message: payload.message || "",
       "Page Path": payload.pagePath || "",
+      ...utmFields,
     };
   }
 
@@ -188,6 +236,7 @@ function buildRow(payload, sheetName) {
     Subject: payload.subject || "",
     Message: payload.message || "",
     "Page Path": payload.pagePath || "",
+    ...utmFields,
   };
 }
 
