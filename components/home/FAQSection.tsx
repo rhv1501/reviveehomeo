@@ -118,12 +118,11 @@ const FAQSection: React.FC = () => {
             {faqsData.map((faq, index) => (
               <div
                 key={index}
-                className={`group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden animate-slide-up border ${
+                className={`group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border ${
                   expandedFAQ === index
                     ? "border-primary-500"
                     : "border-sage-200 hover:border-primary-300"
                 }`}
-                style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <button
                   onClick={() => toggleFAQ(index)}
@@ -164,14 +163,8 @@ const FAQSection: React.FC = () => {
                     </div>
                   </div>
                 </button>
-                <div
-                  className={`transition-all duration-500 overflow-hidden ${
-                    expandedFAQ === index
-                      ? "max-h-200 opacity-100 pb-6 2k:pb-8"
-                      : "max-h-0 opacity-0"
-                  }`}
-                >
-                  <div className="px-6 2k:px-8 bg-linear-to-br from-primary-50 to-cream-50">
+                {expandedFAQ === index && (
+                  <div className="px-6 2k:px-8 pb-6 2k:pb-8 bg-linear-to-br from-primary-50 to-cream-50">
                     <div className="border-t border-primary-200 pt-6 2k:pt-8 pb-2">
                       <div className="relative">
                         <div className="absolute -left-2 top-0 w-1 h-full bg-linear-to-b from-primary-400 to-accent-400 rounded-full"></div>
@@ -181,7 +174,7 @@ const FAQSection: React.FC = () => {
                       </div>
                     </div>
                   </div>
-                </div>
+                )}
               </div>
             ))}
           </div>

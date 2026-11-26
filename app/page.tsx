@@ -1,7 +1,6 @@
 import React from "react";
 import HomeHero from "../components/home/HomeHero";
 import GoogleReviews from "../components/GoogleReviews";
-import dynamic from "next/dynamic";
 import homeData from "../data/home.json";
 import { Metadata } from "next";
 import Image from "next/image";
@@ -14,18 +13,12 @@ import DoctorSpotlight from "../components/home/DoctorSpotlight";
 import WhyChooseUs from "../components/home/WhyChooseUs";
 import ContactForm from "../components/ContactForm";
 import BookingGuide from "../components/home/BookingGuide";
+import FAQSection from "../components/home/FAQSection";
 import {
   PAGE_KEYWORDS,
   BASE_KEYWORDS,
   generateKeywords,
 } from "../utils/seoUtils";
-
-const FAQSection = dynamic(() => import("../components/home/FAQSection"), {
-  ssr: true,
-  loading: () => (
-    <div className="h-96 w-full animate-pulse bg-slate-50 border border-slate-100 my-20" />
-  ),
-});
 
 export const metadata: Metadata = {
   title: "Revivee Homeo Clinic | Best Homeopathy Clinic in Chennai",
