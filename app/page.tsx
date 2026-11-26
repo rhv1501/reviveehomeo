@@ -11,6 +11,7 @@ import womensFocus from "../assets/womens_focus.png";
 import painFocus from "../assets/pain_focus.png";
 import childFocus from "../assets/child_focus.png";
 import DoctorSpotlight from "../components/home/DoctorSpotlight";
+import WhyChooseUs from "../components/home/WhyChooseUs";
 import ContactForm from "../components/ContactForm";
 import BookingGuide from "../components/home/BookingGuide";
 import {
@@ -74,6 +75,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       <HomeHero />
+      <WhyChooseUs />
       <DoctorSpotlight />
 
       {/* Primary Contact Form Section */}

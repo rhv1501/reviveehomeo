@@ -10,6 +10,9 @@ interface CallModalCTAProps {
   children?: React.ReactNode;
 }
 
+// Toggle to true to re-enable the call request popup and lead collection
+const ENABLE_CALL_MODAL = false;
+
 const CallModalCTA: React.FC<CallModalCTAProps> = ({ 
   buttonText = "Call Now", 
   buttonClassName = "", 
@@ -43,6 +46,14 @@ const CallModalCTA: React.FC<CallModalCTAProps> = ({
       window.location.href = phoneLink;
     }
   };
+
+  if (!ENABLE_CALL_MODAL) {
+    return (
+      <a href={phoneLink} id="contactclick" className={buttonClassName}>
+        {children || buttonText}
+      </a>
+    );
+  }
 
   return (
     <>
@@ -118,6 +129,7 @@ const CallModalCTA: React.FC<CallModalCTAProps> = ({
 
               <button
                 type="submit"
+                id="contactclick"
                 disabled={isSubmitting || !name || phone.replace(/\D/g, '').length < 10}
                 className="w-full bg-sage-900 text-white rounded-lg px-4 py-4 text-xs font-bold tracking-widest uppercase hover:bg-sage-800 transition-colors disabled:opacity-50 mt-6 flex items-center justify-center gap-2 group"
               >

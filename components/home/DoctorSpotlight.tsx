@@ -62,7 +62,7 @@ const DoctorSpotlight: React.FC = () => {
               <Link href="/about" className="btn-outline-premium py-4 text-center w-full sm:w-auto sm:px-8">
                 Know More
               </Link>
-              <Link href="/online-consultation" className="btn-premium py-4 text-center w-full sm:w-auto sm:px-8">
+              <Link href="#contact" className="btn-premium py-4 text-center w-full sm:w-auto sm:px-8">
                 Book Appointment
               </Link>
             </div>

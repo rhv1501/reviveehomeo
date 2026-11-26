@@ -25,8 +25,8 @@ const HomeHero: React.FC = () => {
       <div className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 pb-20 sm:pb-24 pt-24">
         <div className="max-w-2xl space-y-5">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight">
-            Personalised Homeopathy for<br />
-            <span className="text-sage-300">Acute & Chronic Conditions</span>
+            Trusted Homeopathy Care for<br />
+            <span className="text-sage-300">Lasting Relief</span>
           </h1>
 
           <p className="text-base sm:text-lg text-white/75 leading-relaxed max-w-lg">
